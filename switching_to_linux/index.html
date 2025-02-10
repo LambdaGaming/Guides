@@ -9,7 +9,7 @@
 	<body>
 		<div class="main">
 			<h1>Switching to Linux</h1>
-			<h3 style="text-align:center">By <a href="https://github.com/LambdaGaming">OPGman<br></a>Published on June 12, 2024<br>Last updated on February 9, 2025</h3>
+			<h3 style="text-align:center">By <a href="https://github.com/LambdaGaming">OPGman<br></a>Published on June 12, 2024<br>Last updated on February 10, 2025</h3>
 			<h2>Table of Contents</h2>
 			<div class="toc">
 				<ol>
@@ -38,8 +38,7 @@
 					<li><a href="#choosing">Choosing a Distro</a></li>
 					<li><a href="#compat">Software Compatibility</a></li>
 					<ol>
-						<li><a href="#compat2">Compatible Programs</a></li>
-						<li><a href="#incompat">Incompatible Programs</a></li>
+						<li><a href="#compat2">Program List</a></li>
 						<li><a href="#compat3">Getting Around Compatibility Issues</a></li>
 					</ol>
 					<li><a href="#conclusion">Conclusion</a></li>
@@ -151,7 +150,7 @@
 			<h2 id="graphics">Graphics</h2>
 			<hr>
 			<ul>
-				<li>If you're using a laptop or a small screen with a relatively large resolution for the screen, be aware that Linux has weird DPI scaling. 100% feels too small and 125% feels too big with most desktop environments. You might be better off changing the scale of various desktop elements individually.</li>
+				<li>If you're using a laptop or a small screen with a relatively large resolution for the screen, be aware that Linux has weird DPI scaling. 100% feels too small and 125% feels too big with most desktop environments. You might be better off lowering the desktop resolution.</li>
 				<li>Linux has 2 graphical backends: X11 and Wayland. X11 is slower and less secure, but also more stable. Wayland is faster and more secure, but not as stable. X11 is likely going to be phased out at some point by most distros. This doesn't mean much for you because your distro will likely handle the transition through an update, but I figured it was still worth mentioning since some desktop environments support both and let you switch between the two pretty easily, and if you want max performance when gaming, switching to Wayland might be ideal.</li>
 				<li>Multi-monitor support is weird. If you have multiple monitors with varying refresh rates and/or resolutions, you might have issues with all monitors being stuck at the refresh rate or resolution of the monitor with the lowest one. Some desktop environments handle this better than others, but none of them seem to be perfect. If you're using X11 instead of Wayland, you might have to disable the compositor, which basically enables vsync on the desktop, to get the proper framerate.</li>
 				<li>Nvidia GPUs require the installation of a proprietary driver to work properly. Most beginner-friendly distros allow you to do this, and many will even guide you through it, but be aware that some of the more advanced distros don't let you do it by default. AMD and Intel GPUs do not require a proprietary driver.</li>
@@ -411,222 +410,143 @@
 			</div>
 
 			<h1 id="compat">Software Compatibility</h1>
-			<p>The following lists contain every non-native program I've personally tested on Linux, excluding Steam games. If you want a specific program tested and it isn't on this list, or it is on the list but you think its classification is wrong, let me know and I'll try to test it. For checking Steam game compatibility, you should visit <a href="https://www.protondb.com/">ProtonDB.</a></p>
-			<h2 id="compat2">Compatible Programs</h2>
+			<p>The following list contains popular Windows programs and how they run on Linux (if at all). Good alternatives that are confirmed to work on Linux are also listed where applicable. Steam games are not listed here. For those, you should visit <a href="https://www.protondb.com/">ProtonDB.</a></p>
+			<h2 id="compat2">Program List</h2>
 			<hr>
-			<p>These Windows programs should run fine under compatibility layers such as Wine. Some programs might only work on a specific version, or with a specific configuration.</p>
 			<button id="CompatListButton" onclick="ToggleVis('CompatList')">Show Program List</button>
 			<div id="CompatList" class="hidden">
 				<table>
 					<tr>
 						<th>Program Name</th>
-						<th>Runs With</th>
+						<th>Works on Linux?</th>
 						<th>Alternatives</th>
 						<th>Notes</th>
 					</tr>
 					<tr>
-						<td>BeamMP Client</td>
-						<td>Proton</td>
-						<td></td>
-						<td>Runs by forking command with SteamTinkerLaunch</td>
+						<td>Adobe Photoshop</td>
+						<td>No</td>
+						<td>GIMP, Krita</td>
+						<td>Older versions that predate Creative Cloud might work.</td>
 					</tr>
 					<tr>
-						<td>Bridge Designer 2016</td>
-						<td>Wine</td>
+						<td>Adobe Illustrator</td>
+						<td>No</td>
+						<td>Inkscape, Krita</td>
+						<td>Older versions that predate Creative Cloud might work.</td>
+					</tr>
+					<tr>
+						<td>Core Temp & GPU-Z</td>
+						<td>No</td>
+						<td>btop++, CPU-X</td>
 						<td></td>
-						<td>Older versions will probably work as well</td>
 					</tr>
 					<tr>
 						<td>EA App</td>
-						<td>Lutris, Bottles, Proton</td>
-						<td></td>
-						<td>Doesn't need manual installation if game is launched from Steam</td>
+						<td>Yes, with Lutris, Bottles, or Wine</td>
+						<td>N/A</td>
+						<td>Doesn't need manual installation if game is launched from Steam.</td>
 					</tr>
 					<tr>
 						<td>Epic Games Launcher</td>
-						<td>Lutris, Bottles</td>
+						<td>Yes, with Lutris, Bottles, or Wine</td>
 						<td>Heroic Games Launcher</td>
 						<td></td>
 					</tr>
 					<tr>
+						<td>Escape From Tarkov</td>
+						<td>No</td>
+						<td>N/A</td>
+						<td>Anti-cheat doesn't support Linux, so the game will launch but you can't join a match.</td>
+					</tr>
+					<tr>
+						<td>Fortnite</td>
+						<td>No</td>
+						<td>N/A</td>
+						<td>Anti-cheat doesn't support Linux, so the game will launch but you can't join a match.</td>
+					</tr>
+					<tr>
 						<td>GCFScape</td>
-						<td>Wine</td>
+						<td>Yes, with Wine</td>
 						<td>VPKEdit</td>
 						<td></td>
 					</tr>
 					<tr>
 						<td>HxD</td>
-						<td>Wine</td>
+						<td>Yes, with Wine</td>
 						<td>Okteta</td>
 						<td></td>
 					</tr>
 					<tr>
-						<td>Need for Speed: Hot Pursuit 2</td>
-						<td>Wine</td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Notepad++</td>
-						<td>Wine</td>
-						<td>Kate</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>SCP: Containment Breach</td>
-						<td>Wine, Proton</td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Stalker Anomaly</td>
-						<td>Wine, Proton</td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Test Drive Unlimited</td>
-						<td>Proton</td>
-						<td></td>
-						<td>Platinum / Project Paradise mods work flawlessly as well</td>
-					</tr>
-					<tr>
-						<td>Ubisoft Connect</td>
-						<td>Lutris, Bottles, Proton</td>
-						<td></td>
-						<td>Doesn't need manual installation if game is launched from Steam</td>
-					</tr>
-					<tr>
-						<td>Valve Hammer Editor</td>
-						<td>Wine</td>
-						<td></td>
-						<td>Requires Wine 9.0+</td>
-					</tr>
-					<tr>
-						<td>Voices of the Void</td>
-						<td>Wine, Proton</td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Vortex</td>
-						<td>Wine</td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>VTFEdit</td>
-						<td>Wine</td>
-						<td></td>
-						<td></td>
-					</tr>
-				</table>
-			</div>
-			<h2 id="incompat">Incompatible Programs</h2>
-			<hr>
-			<p>These programs will not run properly or at all on Linux, no matter what compatibility layer you try to use.</p>
-			<button id="IncompatListButton" onclick="ToggleVis('IncompatList')">Show Program List</button>
-			<div id="IncompatList" class="hidden">
-				<table>
-					<tr>
-						<th>Program Name</th>
-						<th>Alternatives</th>
-						<th>Notes</th>
-					</tr>
-					<tr>
-						<td>Adobe Photoshop (Newer versions) & paint.net</td>
-						<td>GIMP, Krita</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Adobe Illustrator</td>
-						<td>Inkscape, Krita</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Core Temp & GPU-Z</td>
-						<td>CPU-X</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Crowbar (Source Modding Tool)</td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Defraggler</td>
-						<td>e4defrag</td>
-						<td>Unnecessary for most users</td>
-					</tr>
-					<tr>
-						<td>Escape From Tarkov</td>
-						<td></td>
-						<td>Should work with launcher downloaded through Lutris, but doesn't seem to currently</td>
-					</tr>
-					<tr>
-						<td>Fortnite</td>
-						<td></td>
-						<td>Loads to menu but anti-cheat will prevent you from joining a game</td>
-					</tr>
-					<tr>
 						<td>Logitech GHub</td>
-						<td></td>
-						<td>If you only used it for drivers, you won't need it anyway</td>
+						<td>No</td>
+						<td>N/A</td>
+						<td>If you only used it for peripheral drivers, you won't need it anyway.</td>
 					</tr>
 					<tr>
 						<td>LSPDFR mod for GTA V</td>
-						<td></td>
-						<td>Whole game crashes half way through plugin loading</td>
+						<td>No</td>
+						<td>N/A</td>
+						<td>Whole game crashes half way through plugin loading, cause currently unknown.</td>
 					</tr>
 					<tr>
 						<td>Microsoft Office / Office 365</td>
+						<td>No</td>
 						<td>LibreOffice, OpenOffice</td>
-						<td>Older versions might work.</td>
+						<td>Older versions that predate Office 365 might work.</td>
 					</tr>
 					<tr>
-						<td>PowerToys</td>
-						<td>Many exist for each individual tool</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Proton Drive</td>
-						<td>Upload through website</td>
+						<td>Notepad++</td>
+						<td>Yes, with Wine</td>
+						<td>Kate, Nano, Vim</td>
 						<td></td>
 					</tr>
 					<tr>
 						<td>Razer Synapse</td>
+						<td>No</td>
 						<td>OpenRazer</td>
-						<td>Alternative lacks support for game integration</td>
+						<td>Best alternative lacks a lot of features including support for game integration.</td>
+					</tr>
+					<tr>
+						<td>Ubisoft Connect</td>
+						<td>Yes, with Lutris, Bottles, or Wine</td>
+						<td>N/A</td>
+						<td>Doesn't need manual installation if game is launched from Steam.</td>
+					</tr>
+					<tr>
+						<td>Valve Hammer Editor</td>
+						<td>Yes, with Wine or Proton GE</td>
+						<td>N/A</td>
+						<td>Requires Wine/Proton GE 9.0+</td>
 					</tr>
 					<tr>
 						<td>Visual Studio 2022</td>
-						<td></td>
-						<td>Runs fine in a virtual machine</td>
+						<td>No</td>
+						<td>N/A</td>
+						<td>Runs fine in a Windows 10/11 virtual machine.</td>
+					</tr>
+					<tr>
+						<td>Vortex Mod Manager</td>
+						<td>Yes, with Wine</td>
+						<td>N/A</td>
+						<td>Using this through Wine is how the developers intended for Linux users.</td>
 					</tr>
 					<tr>
 						<td>WinDirStat & WizTree</td>
+						<td>No</td>
 						<td>Disk Usage Analyser, Filelight</td>
 						<td></td>
 					</tr>
 					<tr>
 						<td>WinSCP</td>
+						<td>No</td>
 						<td>FileZilla</td>
 						<td></td>
 					</tr>
 					<tr>
-						<td>x64dbg & Cheat Engine</td>
-						<td>Ghidra, Cutter</td>
-						<td></td>
-					</tr>
-					<tr>
 						<td>Xbox Game Bar</td>
+						<td>No</td>
 						<td>OBS Studio, Steam (For game recording); CPU-X (For hardware stats)</td>
-						<td>Alternatives for other features are unknown</td>
-					</tr>
-					<tr>
-						<td>YoutubeDownloader</td>
-						<td>ytDownloader</td>
-						<td></td>
+						<td>Alternatives for other features are unknown.</td>
 					</tr>
 				</table>
 			</div>
