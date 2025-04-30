@@ -85,7 +85,7 @@
 			<hr>
 			<p>Installing a beginner-friendly distro is pretty straightforward, just follow the instructions it gives you as you go. What isn't always straightforward, however, is actually getting Linux to boot. Many distros just give you the ISO file and don't elaborate as to what you're supposed to do with it, so that's what this section will be about.<br><br>
 			
-			There's three things you're going to need to get Linux to boot: A USB drive large enough for your distro, a working Windows, Linux, or macOS PC, and <a href="https://etcher.balena.io/">balenaEtcher</a> installed on that PC. (Just be aware that balenaEtcher has some minor privacy issues despite being open source. If you're familiar with alternatives such as Raspberry Pi Imager or Rufus, I would use one of those instead, but for beginners balenaEtcher is the easiest to download and use on all platforms.) Once you have all of that, follow these steps:
+			There's three things you're going to need to get Linux to boot: A USB drive large enough for your distro, a working Windows, Linux, or macOS PC, and <a href="https://etcher.balena.io/">balenaEtcher</a> installed on that PC. (Just be aware that balenaEtcher has some <a href="https://tails.net/news/rufus/index.en.html">minor privacy issues</a> despite being open source. If you're familiar with alternatives such as Raspberry Pi Imager or Rufus, I would use one of those instead, but for beginners balenaEtcher is the easiest to download and use on all platforms.) Once you have all of that, follow these steps:
 				<ol>
 					<li>Plug in the USB and open balenaEtcher.</li>
 					<li>Select the ISO file you downloaded from the website of the distro you want to use.</li>
@@ -108,7 +108,7 @@
 			<p>When you install a program on Windows, you typically have to download individual exe or msi files, unless you're using the Microsoft Store. Linux is similar in some ways, and vastly different in other ways. It really depends on the distro you're running and the software you want to download. For example, Debian and Ubuntu-based distros can typically install programs from .deb files, while other distros can't. Some distros also come with a GUI software manager similar to the Microsoft Store that lets you download a wide range of software without having to touch the terminal. If you are using a beginner-friendly distro, you will almost never have to manually install something through the terminal.</p>
 			<p>Whether the software manager has a GUI frontend or not, one thing that pretty much all of them have in common is that they can install and update both system files and regular programs, even automatically in some cases. It is not uncommon to update Firefox and the Linux kernel at the same time, for example. While on the topic of system files, a common misconception is that Linux never requires a restart after updating system files. This likely stemmed from the enterprise world where Linux servers are meant to have very little downtime, but home users should always be shutting down their PCs at the end of the day, and restarting after a system update.</p>
 			<p>Where do these updates come from though? Who maintains them? When a program is downloaded through the software manager, it comes from a file server called a repository, or repo for short. These repos are typically hosted by the maintainer of the distro. Many distros offer multiple repos that hold different types of software, such as new releases that are being tested for stability. To ensure that everyone has a fast and stable connection to the repo, they are typically hosted by a bunch of different servers around the world, called mirrors. Different organizations not directly affiliated with the distro maintainer might also host mirrors. Most beginner-friendly distros will automatically choose the mirror with the lowest ping to ensure that you have a fast and stable connection.</p>
-			<p>There are a lot of options for installing an updating software on Linux, and talking about everything would make this section extremely long. It's best to read up on the documentation provided by whatever distro you end up choosing to figure out how to use the software manager. Even distros with very little documentation should mention it since it's a core feature.</p>
+			<p>There are a lot of options for installing and updating software on Linux, and talking about everything would make this section extremely long. It's best to read up on the documentation provided by whatever distro you end up choosing to figure out how to use the software manager. Even distros with very little documentation should mention it since it's a core feature.</p>
 
 			<h3 id="windows">Windows Programs</h3>
 			<p>One of the main reasons people stay away from Linux is that the programs they use or the games they play on Windows don't run on Linux, or so they think. Over the past few years, there have been significant improvements toward this. Many Windows apps are capable of running on Linux through pieces of complex software called compatibility layers. These layers basically translate code written for Windows into code that Linux can understand, in real time, with little to no performance loss (and sometimes even an increase). There are three main programs you can use to run Windows programs on Linux:
@@ -126,11 +126,10 @@
 					<li>NTFS is the file system mainly used by Windows. While Linux supports it for non-system drives, I do not recommend using it, as you might run into performance issues and write errors. You should format all of your drives the same as your main drive, which will usually be ext4.</li>
 					<li>Drive letters don't exist. The root (aka the very first level) of the system drive is identified by a single forward slash /. All other mounted drives are accessed through either the /mnt or /media directory, depending on how it was mounted. Removable drives (USB,CD,Floppy) are typically found in /media, while permanent drives (HDD,SSD) that get mounted at startup are found in /mnt.</li>
 					<li>User files are located in /home/[username]. Similar to the Windows AppData folder, user-specific program data is located in hidden folders inside the user folder called '.config' and '.local'. The /home directory can sometimes be located on a separate partition or physical drive depending on how it was configured during installation, but this won't change how you access it inside Linux.</li>
-					<li>Extra disks are not automatically mounted on Linux unless you specifically tell it to. The easiest way to do this is to download the <a href="https://apps.gnome.org/DiskUtility/">GNOME Disk Utility</a>, click the target disk, click the partition you want to mount, click the box with the play icon in the middle, click Edit Mount Options, then disable the toggle for User Session Defaults. You can change the mount point to a different name like /mnt/Disk2 to make it easier to find if you'd like. Just don't use spaces or special characters. You might also have to click the Take Ownership option to allow other programs such as Steam to write to the drive.</li>
-					<li>Disk cleanup isn't as necessary on Linux as it is on Windows, so most distros don't come with any sort of cleanup tool. If you want to clean up unnecessary system and app files, I recommend <a href="https://www.bleachbit.org/">BleachBit</a>. Most software and update managers will automatically clean up unnecessary files related to that, if not they usually give you an option to do it manually. The only files you might need to clear manually are caches and core dumps in the root folders.</li>
+					<li>Extra disks are not automatically mounted on Linux unless you specifically tell it to. The easiest way to do this is to download the <a href="https://apps.gnome.org/DiskUtility/">GNOME Disk Utility</a>, click the target disk, click the partition you want to mount, click the box with the play icon in the middle, click Edit Mount Options, then disable the toggle for User Session Defaults. You can change the mount point to a different name like /mnt/Disk2 to make it easier to find if you'd like. Just don't use spaces or special characters. You might also have to click the Take Ownership option to allow other programs to write to the drive.</li>
+					<li>Disk cleanup isn't as necessary on Linux as it is on Windows, so most distros don't come with any sort of cleanup tool by default. If you want to clean up unnecessary system and app files, I recommend <a href="https://www.bleachbit.org/">BleachBit</a>. Most software and update managers will automatically clean up unnecessary files related to that, if not they usually give you an option to do it manually. The only files you might need to clear manually are caches and core dumps in the root folders.</li>
 					<li>Defragging hard drives in Linux isn't needed due to the way the ext4 file system works. It scatters files around the disk to leave plenty of space for them to increase in size. Fragmentation only starts to happen when the disk is around 80% full.</li>
 					<li>Hidden files and folders are created by adding a period to the beginning of the name.</li>
-					<li>Folder and file permissions are treated differently than Windows. Users and groups can have separate permissions, and apps can belong to groups. Executable files will not run without giving yourself execute permissions on that file with the `chmod +x [filename]` command. Certain apps might require you to add yourself to a group to work properly due to how permissions work.</li>
 				</ul>
 			</p>
 
@@ -139,7 +138,7 @@
 			<p>I already discussed a lot of the security features Linux has in the previous section, so this subsection will only be discussing a few things that weren't covered there.
 				<ul>
 					<li>Some distros give you the option to encrypt your home folder and/or entire drive. I personally don't recommend it unless you're using a laptop that you travel a lot with, or live in an area where burglaries and thefts are common. It can cause issues with certain programs (including Steam) and slow down older systems. It also makes data recovery more difficult in the event of a drive failure.</li>
-					<li>Giving a program admin rights in Linux is much different than Windows. Running something as sudo gives that program or user full control over the ENTIRE system, including system files, the bootloader, and every connected hardware device. One of the easiest ways for a virus to gain access to the system is to trick the user into running it as sudo. Only run things with sudo if you 100% trust it to not do anything malicious with that power.</li>
+					<li>Giving a program admin rights in Linux is very different from Windows. Running something as sudo gives that program or user full control over the ENTIRE system, including system files, the bootloader, and every connected hardware device. One of the easiest ways for malware to gain access to the system is to trick the user into running it as sudo. Only run things with sudo if you 100% trust it to not do anything malicious with that power.</li>
 					<li>Additional security risks are introduced when Wine (the software used to run Windows programs) is installed on your system. As Wine continues to evolve, more and more Windows programs have the ability to run out of the box on Linux, and running programs through Wine bypasses the file system's executable permissions. Furthermore, neither Linux nor Wine come with any sort of anti-virus, so there's no system in place to scan programs for viruses before they're opened or while they're running. This isn't meant to scare you out of using Wine, it's a very useful tool that I highly recommend, but you need to be careful about what you run with it.</li>
 				</ul>
 			</p>
@@ -149,7 +148,7 @@
 			<ul>
 				<li>If you're using a laptop or a small screen with a relatively large resolution for the screen, be aware that Linux has weird DPI scaling. 100% feels too small and 125% feels too big with most desktop environments. You might be better off lowering the desktop resolution.</li>
 				<li>Linux has 2 graphical backends: X11 and Wayland. X11 is slower and less secure, but also more stable. Wayland is faster and more secure, but not as stable. X11 is likely going to be phased out at some point by most distros. This doesn't mean much for you because your distro will likely handle the transition through an update, but I figured it was still worth mentioning since some desktop environments support both and let you switch between the two pretty easily, and if you want max performance when gaming, switching to Wayland might be ideal.</li>
-				<li>Multi-monitor support is weird. If you have multiple monitors with varying refresh rates and/or resolutions, you might have issues with all monitors being stuck at the refresh rate or resolution of the monitor with the lowest one. Some desktop environments handle this better than others, but none of them seem to be perfect. If you're using X11 instead of Wayland, you might have to disable the compositor, which basically enables vsync on the desktop, to get the proper framerate.</li>
+				<li>Multi-monitor support is weird with X11. If you have multiple monitors with varying refresh rates and/or resolutions, you might have issues with all monitors being stuck at the refresh rate or resolution of the monitor with the lowest one. Some desktop environments handle this better than others, but none of them seem to be perfect. You might have to disable the compositor, which basically enables vsync on the desktop, to get the proper framerate.</li>
 				<li>Nvidia GPUs require the installation of a proprietary driver to work properly. Most beginner-friendly distros allow you to do this, and many will even guide you through it, but be aware that some of the more advanced distros don't let you do it by default. AMD and Intel GPUs do not require a proprietary driver.</li>
 			</ul>
 
@@ -158,11 +157,11 @@
 			<ul>
 				<li>Much like Windows, out of the box printer support is very hit or miss. I've had a USB printer from 2001 work out of the box, but a network printer from 2010 and a USB printer from 2024 both required a manual driver installation.</li>
 				<li>The Linux kernel has built-in drivers for a LOT of USB devices, much more than Windows, but sometimes they still need manual tweaks to work properly.</li>
-				<li>The Linux community is pretty divided, and it's not hard to end up on the toxic side. Some people (especially Arch users) love to gate keep and belittle newbies for not being as knowledgeable as them, so just keep that in mind when searching online for answers to something.</li>
+				<li>The Linux community can be pretty divided, and it's not hard to end up on the toxic side. Some people love to gate keep and belittle newbies for not being as knowledgeable as them, so just keep that in mind when searching online for answers to something.</li>
 			</ul>
 
 			<h1 id="choosing">Choosing a Distro</h1>
-			<p>If you're brand new to Linux and want to jump in right away without having to worry about picking a distro, skip this section and just go with <a href="https://www.linuxmint.com/">Mint.</a> It's a good general-purpose OS with a clean and minimalist desktop environment that'll feel familiar if you're coming from Windows. You can always live boot or dual boot before fully committing to a distro, so if you don't like it you can just try another one.<br><br>
+			<p>If you're brand new to Linux and want to jump in right away without having to worry about picking a distro, skip this section and just go with <a href="https://www.linuxmint.com/">Mint</a>. It's a good general-purpose OS with a clean and minimalist desktop environment that'll feel familiar if you're coming from Windows. You can always live boot or dual boot before fully committing to a distro, so if you don't like it you can just try another one.<br><br>
 
 			If you're interested in seeing what's out there and what the differences are between popular distros, you can continue reading through this section. Just note that I won't be covering niche or obscure distros here. Anything that isn't already popular isn't worth using for most people, since you're much more likely to run into problems regarding usability, stability, software availability, and documentation.<br><br>
 				
@@ -356,7 +355,7 @@
 				<img src="slackware.png">
 	
 				<h3><a href="https://www.kali.org/">Kali</a></h3>
-				Kali Linux is a highly specialized distro focused around cybersecurity. It comes with a huge amount of tools used for password cracking, forensic analysis, packet sniffing, network attacks, and much more. It's not a distro meant for daily driving by any means, I'm only including it here since it's popular and you might have heard of it before, even if you're brand new to Linux.
+				Kali Linux is a highly specialized distro focused around cybersecurity. It comes with a huge amount of tools used for password cracking, forensic analysis, packet sniffing, network attacks, and much more. It's not a distro meant for daily driving by any means, I'm only including it here since it's popular and you might have heard of it before.
 				<ul>
 					<li>Beginner friendliness: 3/10</li>
 					<li>Includes starter guide: Yes</li>
@@ -403,7 +402,7 @@
 				SteamOS is a specialized Arch Linux-based OS developed by Valve, for use with their handheld gaming PC, the Steam Deck. It is not a GNU/Linux distro because it comes with proprietary software, but I think it's still worth mentioning here since it's been in the news a lot recently. Currently, it's technically possible to install SteamOS on a regular PC, but it's not at all straightforward or officially supported by Valve. This will likely change soon, however, and I will update this section with more details as they emerge.
 
 				<h3><a href="https://www.freebsd.org/">FreeBSD</a></h3>
-				FreeBSD is NOT Linux, but I'm putting it here to avoid confusion because some people think it is. It's actually based on Unix, which is a much older OS made by Bell Labs (now owned by Nokia), that started development in 1969 and released publicly in 1973. Linux is Unix-like but not directly based on it, so naturally there are some similarities but many more differences.<br><br>These days, Unix itself isn't in development anymore, but several Unix-based operating systems are. FreeBSD, macOS, and Solaris are just a few examples. If you're reading through this guide, FreeBSD or any other Unix-based OS probably isn't for you, but again I figured I'd mention it to clear up any confusion.
+				FreeBSD is NOT Linux, but I'm putting it here to avoid confusion because some people think it is. It's actually based on Unix, which is a much older OS made by Bell Labs, that started development in 1969 and released publicly in 1973. Linux is Unix-like but not directly based on it, so naturally there are some similarities but many more differences.<br><br>These days, Unix itself isn't in development anymore, but several Unix-based operating systems are. FreeBSD, macOS, and Solaris are just a few examples. If you're reading through this guide, FreeBSD or any other Unix-based OS probably isn't for you, but again I figured I'd mention it to clear up any confusion.
 			</div>
 
 			<h1 id="compat">Software Compatibility</h1>
@@ -468,7 +467,7 @@
 						<td></td>
 					</tr>
 					<tr>
-						<td>HxD</td>
+						<td>HxD / WinHex</td>
 						<td>Yes, with Wine</td>
 						<td>Okteta</td>
 						<td></td>
@@ -478,12 +477,6 @@
 						<td>No</td>
 						<td>N/A</td>
 						<td>If you only used it for peripheral drivers, you won't need it anyway.</td>
-					</tr>
-					<tr>
-						<td>LSPDFR mod for GTA V</td>
-						<td>No</td>
-						<td>N/A</td>
-						<td>Whole game crashes half way through plugin loading, cause currently unknown.</td>
 					</tr>
 					<tr>
 						<td>Microsoft Office / Office 365</td>
@@ -542,7 +535,7 @@
 					<tr>
 						<td>Xbox Game Bar</td>
 						<td>No</td>
-						<td>OBS Studio, Steam (For game recording); CPU-X (For hardware stats)</td>
+						<td>OBS Studio, Steam (For game recording); btop++, CPU-X (For hardware stats)</td>
 						<td>Alternatives for other features are unknown.</td>
 					</tr>
 				</table>
@@ -561,7 +554,7 @@
 			<h1 id="conclusion">Conclusion</h1>
 			<p>If you're wondering whether or not you should switch to Linux, my answer is YES! Windows 10 will no longer receive security updates after October 2025, and Windows 11 is getting worse with every update. Meanwhile, all aspects of Linux are constantly improving, and there's a ton of different options to choose from. I only made the switch in early 2024 after being a life-long Windows user because it was evident to me that Microsoft wasn't interested in actually making Windows better; they're just looking for more excuses to collect and sell your data. They've already overstepped their boundaries with Recall, so who knows what they're going to be trying throughout Windows 11's lifespan.<br><br>
 
-			Despite being a Windows user for so long (and even liking Windows 11 at one point), I haven't looked back at all since I switched. Seeing what Linux and the rest of the open source community has to offer really changed my perspective. Take the tabbed file explorer in Windows 11 for example. I was hyped for this feature, not realizing that various file browsers for Linux have had it for years. Unlike Windows, you don't have to wait several years for useful features like that to be added because of company politics or bureaucracy. The only limitations when it comes to Linux are your free time and technical skills, which brings me to my final point.<br><br>
+			Despite being a Windows user for so long (and even liking Windows 11 at launch), I haven't looked back at all since I switched. Seeing what Linux and the rest of the open source community has to offer really changed my perspective. Take the tabbed file explorer in Windows 11 for example. I was hyped for this feature, not realizing that various file browsers for Linux have had it for years. Unlike Windows, you don't have to wait several years for useful features like that to be added because of company politics or bureaucracy. The only limitations when it comes to Linux are your free time and technical skills, which brings me to my final point.<br><br>
 				
 			Some people argue that Linux isn't good for people who aren't familiar with computers due to its complex nature. While there is some truth to this, Linux doesn't have to be complex to the average user. Choosing the right distro and configuring it properly can make them feel right at home. Mint, for example, has an option for auto updates, which is critical for people who don't know much about computers because it would otherwise never get updated. No matter what your technical background is, I think Linux is at least worth trying. Theres many ways to do it, it doesn't take much to get started, and most importantly, it's free!</p>
 		</div>
