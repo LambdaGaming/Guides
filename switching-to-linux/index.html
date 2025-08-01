@@ -9,7 +9,7 @@
 	<body>
 		<div class="main">
 			<h1>Switching to Linux</h1>
-			<h3 style="text-align:center">By <a href="https://github.com/LambdaGaming">OPGman<br></a>Published on June 12, 2024<br>Last updated on July 6, 2025</h3>
+			<h3 style="text-align:center">By <a href="https://github.com/LambdaGaming">OPGman<br></a>Published on June 12, 2024<br>Last updated on August 1, 2025</h3>
 			<h2>Table of Contents</h2>
 			<div class="toc">
 				<ol>
@@ -66,7 +66,7 @@
 			Some people think that online privacy doesn't matter if they have nothing to hide. I couldn't disagree more. This section is already long enough so I'm not going to rant about that, but if you're willing to have your mind changed, <a href="https://www.privacyguides.org/en/basics/why-privacy-matters/">this article tells you everything you need to know</a>. This website in general is a fantastic resource for everything related to online privacy.</p>
 			<h2 id="security">Security</h2>
 			<hr>
-			<p>You can't have privacy without security, and while nothing is ever 100% secure, Linux-based systems are by far the most secure out of all the mainstream operating systems for several reasons:
+			<p>You can't have privacy without security, and while nothing is ever 100% secure, Linux-based systems are generally more secure than Windows and macOS for several reasons:
 				<ol>
 					<li>Security through obscurity. Simply put, Linux is significantly less popular in the desktop space than both Windows and macOS, so malware creators have less incentive to target it. This could certainly change as Linux grows in popularity among desktop users, but there are other factors that still limit the effectiveness of malware on Linux.</li>
 					<li>Linux uses file and group permissions to determine who is allowed to access and modify what. System files are protected with these permissions, and cannot be modified by any program unless it is running with root permissions, which requires the user to input a password.</li>
@@ -74,12 +74,12 @@
 					<li>Unlike Windows, Linux does not allow any random program to run code at the kernel level, also called ring 0. This is extremely important, as ring 0 gives programs full access to your entire system. This is why most video game anti-cheats will not run on Linux. Many of them run at the kernel level on Windows so they can monitor for cheating by reading the memory of other programs. The only way to run programs at the kernel level on Linux is to <a href="https://www.geeksforgeeks.org/linux-unix/linux-kernel-module-programming-hello-world-program/">compile them from source and install them into the kernel</a>, which doesn't work for proprietary software like malware and anti-cheats.</li>
 					<li>Many Linux programs (and the Linux kernel itself) are open source, and created by many different people. If you have a bad actor injecting malware into a program or distro, not only are they likely to affect only a very small portion of all Linux users, but those affected users also have the choice of removing that program, installing an older version, or simply not updating to the affected version. Windows and macOS are developed exclusively by corporations and are not open source, so if they want to do something malicious or unwanted, it's eventually going to affect everyone due to forced updates, and you likely won't be able to do much about it.</li>
 					<li>Apps from certain package managers such as <a href="https://flathub.org/">Flatpak</a> and <a href="https://snapcraft.io/">Snap</a> run in a sandbox, which basically forces the app to run in its own bubble where it has limited access to system files and cannot easily interact with other apps. Many companies choose to distribute their closed-source apps through these package managers because it helps assure the user that the app is safe. While you can technically achieve the same result on Windows, it's nowhere near as straightforward as this. This isn't to say that Flatpaks and Snaps are 100% secure, but the groups that manage these systems are constantly improving security and ensuring that any threats are quickly taken care of.</li>
-					<li>Most Windows 10 users will stop receiving security updates on <a href="https://learn.microsoft.com/en-us/lifecycle/products/windows-10-home-and-pro">October 14, 2025.</a> After that, you run the risk of using a compromised system if a security flaw is discovered and exploited, because it will not be fixed. You could upgrade to Windows 11 if it supports your hardware, or <a href="https://www.pcgamer.com/gaming-industry/dont-want-to-switch-to-windows-11-there-is-one-last-way-to-stick-with-windows-10-a-little-longer/">get a year of extended security updates for Windows 10</a>, but neither of these options are ideal from a privacy standpoint.</li>
+					<li>Most Windows 10 users will stop receiving security updates on <a href="https://learn.microsoft.com/en-us/lifecycle/products/windows-10-home-and-pro">October 14, 2025.</a> After that, you run the risk of using a compromised system if a security flaw is discovered and exploited, because it will not be fixed. You <i>could</i> upgrade to Windows 11 if it supports your hardware, or <a href="https://www.pcgamer.com/gaming-industry/dont-want-to-switch-to-windows-11-there-is-one-last-way-to-stick-with-windows-10-a-little-longer/">get a year of extended security updates for Windows 10</a>, but neither of these options are ideal from a privacy standpoint.</li>
 				</ol>
 			</p>
 			<h2 id="freedom">Freedom</h2>
 			<hr>
-			<p>While freedom in terms of what you can do with your software isn't nearly as important as privacy and security, it's still worth mentioning because it's a big part of Linux's identity. Unlike Windows and macOS, Linux gives you absolute control over the entire system (provided you have admin privileges). You're free to install, modify, and remove absolutely anything, including parts that really shouldn't be touched because doing so could break the entire system. With Windows and macOS, you're stuck with whatever functionality Microsoft and Apple want you to have. There are many parts of both operating systems that simply cannot be removed, disabled, or modified no matter how hard you try.</p>
+			<p>Unlike Windows and macOS, Linux gives you absolute control over the entire system, provided that you have admin privileges. You have the freedom to install, modify, and remove absolutely anything, including parts that really shouldn't be touched because doing so could break the entire system. With Windows and macOS, you're stuck with whatever functionality Microsoft and Apple want you to have. There are many parts of both operating systems that simply cannot be removed, disabled, or modified no matter how hard you try.</p>
 
 			<h1 id="overview">Linux Overview</h1>
 			<p>This section will cover the basics of Linux as well as some of its quirks that you should be aware of to avoid confusion later on.</p>
@@ -87,9 +87,9 @@
 			<hr>
 			<p>Distro is short for distribution. It's typically considered to be an operating system that runs on the Linux kernel, comes with various free open-source software (FOSS) pre-installed, is designed for desktop use, and is available to be used and distributed freely by the public. The problem is that there are many definitions and some operating systems might fit this definition but are still not considered distros, and vice versa.<br><br>
 
-			You might hear someone refer to a distro as GNU/Linux. This is in reference to the <a href="https://www.gnu.org/">GNU operating system.</a> A lot of distros adhere to the philosophy of GNU, which is basically to build an operating system using only FOSS, but some distros include proprietary software, so they are not GNU/Linux systems by definition.<br><br>
+			You might hear someone refer to a distro as GNU/Linux. This is in reference to the <a href="https://www.gnu.org/">GNU operating system.</a> A lot of distros adhere to the basic philosophy of GNU, which is essentially to build an operating system using only FOSS, but most mainstream distros aren't considered free by GNU's strict definition, so they technically aren't GNU/Linux.<br><br>
 
-			The semantics of it is confusing and pretty much pointless to try to understand. The key takeaway is that most desktop operating systems that run on Linux are considered distros.</p>
+			The semantics of it is confusing and pretty much pointless to try to understand. The key takeaway is that most desktop operating systems that run on Linux are considered distros <i>and</i> are also referred to as GNU/Linux.</p>
 			
 			<h2 id="installinglinux">Installing Linux</h2>
 			<hr>
@@ -110,13 +110,13 @@
 
 			<h2 id="de">Desktop Environments</h2>
 			<hr>
-			<p>Desktop environments are basically the front end meat of the operating system. They include things like the taskbar, start menu, wallpaper, desktop icons, and the alt+tab menu. Unlike Windows, there are several desktop environments available for Linux, and they all have distinct features. Some of the most popular include <a href="https://kde.org/plasma-desktop/">KDE Plasma</a>, <a href="https://www.gnome.org/">GNOME</a>, <a href="https://en.wikipedia.org/wiki/Cinnamon_(desktop_environment)">Cinnamon</a>, <a href="https://xfce.org/">Xfce</a>, <a href="https://lxqt-project.org/">LXQt</a>, and <a href="https://mate-desktop.org/">MATE</a>. Most distros come with a desktop environment pre-installed, and many let you choose between different ones before or during installation.</p>
+			<p>Desktop environments are basically the graphical meat of the operating system. They include things like the taskbar, start menu, wallpaper, desktop icons, and the alt+tab menu. Unlike Windows, there are several desktop environments available for Linux, and they all have distinct features. Some of the most popular include <a href="https://kde.org/plasma-desktop/">KDE Plasma</a>, <a href="https://www.gnome.org/">GNOME</a>, <a href="https://en.wikipedia.org/wiki/Cinnamon_(desktop_environment)">Cinnamon</a>, <a href="https://xfce.org/">Xfce</a>, <a href="https://lxqt-project.org/">LXQt</a>, and <a href="https://mate-desktop.org/">MATE</a>. Most distros come with a desktop environment pre-installed, and many let you choose between different ones before or during installation.</p>
 
 			<h2 id="installingsoftware">Installing Software</h2>
 			<hr>
 			<h3 id="native">Native Programs</h3>
 			<p>When you install a program on Windows, you typically have to download individual exe or msi files, unless you're using the Microsoft Store. Linux is similar in some ways, and vastly different in other ways. It really depends on the distro you're running and the software you want to download. For example, Debian and Ubuntu-based distros can typically install programs from .deb files, while other distros can't. Some distros also come with a GUI software manager similar to the Microsoft Store that lets you download a wide range of software without having to touch the terminal. If you are using a beginner-friendly distro, you will almost never have to manually install something through the terminal.</p>
-			<p>Whether the software manager has a GUI frontend or not, one thing that pretty much all of them have in common is that they can install and update both system files and regular programs, even automatically in some cases. It is not uncommon to update Firefox and the Linux kernel at the same time, for example. While on the topic of system files, a common misconception is that Linux never requires a restart after updating system files. This likely stemmed from the enterprise world where Linux servers are meant to have very little downtime, but home users should always be shutting down their PCs at the end of the day, and restarting after a system update.</p>
+			<p>Whether the software manager has a GUI frontend or not, one thing that pretty much all of them have in common is that they can install and update both system files and regular programs, even automatically in some cases. It is not uncommon to update Firefox and the Linux kernel at the same time, for example. While on the topic of system files, a common misconception is that Linux never requires a restart after updating system files. While most distros will never <i>force</i> you to restart, it's still recommended that you do so as soon as possible.</p>
 			<p>Where do these updates come from though? Who maintains them? When a program is downloaded through the software manager, it comes from a file server called a repository, or repo for short. These repos are typically hosted by the maintainer of the distro. Many distros offer multiple repos that hold different types of software, such as new releases that are being tested for stability. To ensure that everyone has a fast and stable connection to the repo, they are typically hosted by a bunch of different servers around the world, called mirrors. Different organizations not directly affiliated with the distro maintainer might also host mirrors. Most beginner-friendly distros will automatically choose the mirror with the lowest ping to ensure that you have a fast and stable connection.</p>
 			<p>There are a lot of options for installing and updating software on Linux, and talking about everything would make this section extremely long. It's best to read up on the documentation provided by whatever distro you end up choosing to figure out how to use the software manager. Even distros with very little documentation should mention it since it's a core feature.</p>
 
@@ -166,14 +166,14 @@
 			<hr>
 			<ul>
 				<li>Much like Windows, out of the box printer support is very hit or miss. I've had a USB printer from 2001 work out of the box, but a network printer from 2010 and a USB printer from 2024 both required a manual driver installation.</li>
-				<li>The Linux kernel has built-in drivers for a LOT of USB devices, much more than Windows, but sometimes they still need manual tweaks to work properly.</li>
-				<li>The Linux community can be pretty divided, and it's not hard to end up on the toxic side. Some people love to gate keep and belittle newbies for not being as knowledgeable as them, so just keep that in mind when searching online for answers to something.</li>
+				<li>The Linux kernel has a lot of built-in drivers that add support for a wide range of USB devices. However, these drivers are typically generic and only cover basic functionalities. If you have a more specialized device, it might require manual tweaks to work properly, or it might not work at all.</li>
+				<li>You might find yourself on the toxic side of the Linux community while interacting with it. My advice is to simply ignore whatever the toxic people have to say. Some of them love to belittle newbies and gate keep because they think of the Linux community as some exclusive club that only tech savvy people are allowed to be part of.</li>
 			</ul>
 
 			<h1 id="choosing">Choosing a Distro</h1>
 			<p>If you're brand new to Linux and want to jump in right away without having to worry about picking a distro, skip this section and just go with <a href="https://www.linuxmint.com/">Mint</a>. It's a good general-purpose OS with a clean and minimalist desktop environment that'll feel familiar if you're coming from Windows. You can always live boot or dual boot before fully committing to a distro, so if you don't like it you can just try another one.<br><br>
 
-			If you're interested in seeing what's out there and what the differences are between popular distros, you can continue reading through this section. Just note that I won't be covering niche or obscure distros here. Anything that isn't already popular isn't worth using for most people, since you're much more likely to run into problems regarding usability, stability, software availability, and documentation.<br><br>
+			If you're interested in seeing what's out there and what the differences are between popular distros, you can continue reading through this section. Just note that I won't be covering super niche or obscure distros here. Anything that isn't already popular isn't worth using for most people, since you're much more likely to run into problems regarding usability, stability, software availability, and documentation.<br><br>
 				
 			Also note that all of the distros here are ordered by a beginner friendliness ranking that I personally chose. A 10/10 doesn't mean it's the best overall, it just means beginners will likely have a very easy time adjusting to it.</p>
 
@@ -239,6 +239,25 @@
 				</ul>
 				<img src="ubuntu.png">
 	
+				<h3><a href="https://bazzite.gg/">Bazzite</a></h3>
+				Bazzite is a gaming-focused distro that comes with a handful of gaming-related software pre-installed. This software includes but is not limited to Steam, Lutris, ProtonPlus, Protontricks, Distrobox, and Waydroid. There are also extra drivers and tweaks included to ensure maximum compatibility out of the box.
+				<ul>
+					<li>Beginner friendliness: 7/10</li>
+					<li>Includes starter guide: Yes (Online only)</li>
+					<li>Includes GUI software manager: Yes (Flatpak only)</li>
+					<li>Base distro: Fedora</li>
+					<li>Default desktop environments: GNOME, KDE Plasma</li>
+					<li>Release type: Irregular</li>
+					<li>Notes</li>
+					<ul>
+						<li>It might be difficult for beginners to install certain software if it isn't available as a Flatpak.</li>
+						<li>Support for handheld PCs is also included.</li>
+						<li>If you choose to use KDE Plasma, it will come with the same themes that are available on SteamOS.</li>
+						<li>The desktop environment in the screenshot is KDE Plasma with the VGUI2 (2003 Steam) theme applied.</li>
+					</ul>
+				</ul>
+				<img src="bazzite.png">
+	
 				<h3><a href="https://pop.system76.com/">Pop!_OS</a></h3>
 				Pop!_OS is like a more specialized Ubuntu. It's tailored for power users who do a variety of tasks such as programming, gaming, and creative works.
 				<ul>
@@ -254,6 +273,18 @@
 					</ul>
 				</ul>
 				<img src="pop.png">
+	
+				<h3><a href="https://nobaraproject.org/">Nobara</a></h3>
+				Nobara is an improved version of Fedora with quality of life features added. Most notably, it allows users to easily install proprietary software. It's targeted towards gamers but it's not as gaming-centric as something like Bazzite.
+				<ul>
+					<li>Beginner friendliness: 7/10</li>
+					<li>Includes starter guide: Yes (Online only)</li>
+					<li>Includes GUI software manager: Yes</li>
+					<li>Base distro: Fedora</li>
+					<li>Default desktop environments: KDE Plasma (Nobara theme), KDE Plasma (Default theme), KDE Plasma (Steam Deck theme), GNOME</li>
+					<li>Release type: Irregular</li>
+				</ul>
+				<img src="nobara.png">
 	
 				<h3><a href="https://www.debian.org/">Debian</a></h3>
 				Debian is a very stable and robust distro. Software versions are typically held back until it's been verified to not cause bugs or other types of compatibility issues. It offers a wide variety of desktop environments but comes with a minimal amount of software, making it not as straightforward to use as some other distros.
@@ -273,7 +304,7 @@
 				<img src="debian.png">
 	
 				<h3><a href="https://manjaro.org/">Manjaro</a></h3>
-				Manjaro is another general-purpose OS that comes with a variety of software pre-installed, but it's a bit more complex due to how it works under the hood. The distro is based on Arch Linux, but it uses its own repositories. The Manjaro team tests software updates being pushed to the Arch repos before pushing them to their own repos, for the sake of stability. This is a great idea on paper but in reality Manjaro isn't much more stable than Arch.
+				Manjaro is a general-purpose OS that comes with a variety of software pre-installed, but it's a bit more complex due to how it works under the hood. The distro is based on Arch Linux, but it uses its own repositories. The Manjaro team tests software updates being pushed to the Arch repos before pushing them to their own repos, for the sake of stability. This is a great idea on paper but in reality Manjaro isn't much more stable than Arch.
 				<ul>
 					<li>Beginner friendliness: 6/10</li>
 					<li>Includes starter guide: Yes</li>
@@ -305,8 +336,37 @@
 				</ul>
 				<img src="opensuse.png">
 	
+				<h3><a href="https://garudalinux.org/editions">Garuda</a></h3>
+				Garuda Linux is a highly customized version of Arch that includes a lot of quality of life features, including a central hub for configuring and maintaining the system. It's similar to Manjaro but it's slightly less intuitive in some areas.
+				<ul>
+					<li>Beginner friendliness: 6/10</li>
+					<li>Includes starter guide: No</li>
+					<li>Includes GUI software manager: Yes</li>
+					<li>Base distro: Arch</li>
+					<li>Default desktop environments: Mokka (Customized KDE Plasma), Dr460nized (Customized KDE Plasma), GNOME, Cinnamon, Xfce, KDE Plasma, COSMIC</li>
+					<li>Release type: Rolling</li>
+					<li>Notes</li>
+					<ul>
+						<li>Garuda provides access to the AUR, but it's a separate version called Chaotic AUR. It might include software you're looking for that isn't in the main AUR, but it could also be missing things.</li>
+						<li>The desktop environment in the screenshot is KDE Plasma with the Mokka theme.</li>
+					</ul>
+				</ul>
+				<img src="garuda.png">
+	
+				<h3><a href="https://fedoraproject.org/workstation/">Fedora</a></h3>
+				Fedora is also similar to Ubuntu but with a much larger focus on open source software, privacy, and workloads. It's backed by Red Hat, creator of RHEL, so some functionalities that are commonly seen in the enterprise ecosystem such as virtual machines and containers are included by default. Most beginners should avoid it unless they are only going to be using open source software.
+				<ul>
+					<li>Beginner friendliness: 6/10</li>
+					<li>Includes starter guide: Yes (Not very detailed)</li>
+					<li>Includes GUI software manager: Yes</li>
+					<li>Base distro: Ubuntu</li>
+					<li>Default desktop environment: GNOME</li>
+					<li>Release type: Periodical, every 6 months</li>
+				</ul>
+				<img src="fedora.png">
+	
 				<h3><a href="https://endeavouros.com/">EndeavourOS</a></h3>
-				EndeavourOS is similar to Manjaro but uses the Arch repositories for most packages and does not come with as much software pre-installed.
+				EndeavourOS is a somewhat bare bones distro. It comes with a minimal amount of software pre-installed; just a basic desktop with a web browser. It's a good choice for people who want to use Arch without going through the hassle of setting it up.
 				<ul>
 					<li>Beginner friendliness: 5/10</li>
 					<li>Includes starter guide: Yes</li>
@@ -317,17 +377,33 @@
 				</ul>
 				<img src="endeavour.png">
 	
-				<h3><a href="https://fedoraproject.org/workstation/">Fedora</a></h3>
-				Fedora is also similar to Ubuntu but with a much larger focus on open source software, privacy, and workloads. It's backed by Red Hat, creator of RHEL, so some functionalities that are commonly seen in the enterprise ecosystem such as virtual machines and containers are included by default. Unless you work with Linux for a living, Fedora probably isn't for you.
+				<h3><a href="https://cachyos.org/">CachyOS</a></h3>
+				CachyOS is very similar to EndeavourOS except it uses a customized kernel that contains optimizations for maximum performance, particularly in gaming.
 				<ul>
 					<li>Beginner friendliness: 5/10</li>
-					<li>Includes starter guide: Yes (Not very detailed)</li>
-					<li>Includes GUI software manager: Yes</li>
-					<li>Base distro: Ubuntu</li>
-					<li>Default desktop environment: GNOME</li>
-					<li>Release type: Periodical, every 6 months</li>
+					<li>Includes starter guide: Yes</li>
+					<li>Includes GUI software manager: No</li>
+					<li>Base distro: Arch</li>
+					<li>Default desktop environment: KDE Plasma</li>
+					<li>Release type: Rolling</li>
+					<li>Notes</li>
+					<ul>
+						<li>CachyOS also has a separate version available for handheld PCs such as the Steam Deck.</li>
+					</ul>
 				</ul>
-				<img src="fedora.png">
+				<img src="cachy.png">
+	
+				<h3><a href="https://voidlinux.org/">Void</a></h3>
+				Void Linux is a general-purpose, terminal-centric, lightweight distro. It's similar to Manjaro in that it's a rolling release distro that holds package versions back for the sake of stability. Unlike Manjaro however, Void tends to actually be stable. It's mostly intended for people who want a clean, lightweight system that is 100% FOSS.
+				<ul>
+					<li>Beginner friendliness: 4/10</li>
+					<li>Includes starter guide: Yes (Online only)</li>
+					<li>Includes GUI software manager: No</li>
+					<li>Base distro: None</li>
+					<li>Default desktop environment: Xfce</li>
+					<li>Release type: Rolling</li>
+				</ul>
+				<img src="void.png">
 	
 				<h3><a href="https://www.centos.org/download/">CentOS</a></h3>
 				CentOS is a more advanced OS catered towards users of Red Hat Enterprise Linux, similar to Fedora but more in-depth and less casual.
@@ -376,6 +452,18 @@
 				</ul>
 				<img src="kali.png">
 	
+				<h3><a href="https://nixos.org/">NixOS</a></h3>
+				NixOS is a terminal-centric distro that has several features designed for software developers. These features include but are not limited to: Saving exact system configurations to use on different PCs so development environments remain consistent, having multiple versions of the same software installed at the same time, testing potentially dangerous system changes in a virtual machine, and rolling back the system to a previous version if something does break.
+				<ul>
+					<li>Beginner friendliness: 3/10</li>
+					<li>Includes starter guide: Yes</li>
+					<li>Includes GUI software manager: No</li>
+					<li>Base distro: None</li>
+					<li>Default desktop environments: GNOME, KDE Plasma</li>
+					<li>Release type: Periodical, every 6 months</li>
+				</ul>
+				<img src="nixos.png">
+
 				<h3><a href="https://archlinux.org/">Arch</a></h3>
 				Arch Linux is an extremely barebones and lightweight distro. By default, you get a terminal and a couple utility packages pre-installed, that's it. If you're new to Linux, you should probably stay far away from this distro until you're ready to go down that rabbit hole.
 				<ul>
@@ -394,7 +482,7 @@
 				<img src="arch.png">
 	
 				<h3><a href="https://www.gentoo.org/downloads/">Gentoo</a></h3>
-				Gentoo is a very unusual distro. It ships with it's own unique software manager that compiles all programs from source rather than downloading precompiled binaries. This is supposedly for optimization purposes but I have my doubts that it's worth the compile times. Much like Arch, Gentoo is also extremely barebones and does not come with a desktop environment by default. If you're reading through this guide, you have absolutely no reason to use this distro, but I figured it was still worth pointing out since it's interesting.
+				Gentoo is a very unusual distro. It ships with it's own unique software manager that compiles all programs from source rather than downloading precompiled binaries. This is supposedly for security and optimization purposes but I have my doubts that it's worth the compile times. Much like Arch, Gentoo is also extremely barebones and does not come with a desktop environment by default. If you're reading through this guide, you have absolutely no reason to use this distro.
 				<ul>
 					<li>Beginner friendliness: 1/10</li>
 					<li>Includes starter guide: Yes (Online only)</li>
@@ -409,10 +497,10 @@
 				</ul>
 	
 				<h3><a href="https://store.steampowered.com/steamos">SteamOS</a></h3>
-				SteamOS is a specialized Arch Linux-based OS developed by Valve, for use with handheld gaming PCs such as the Steam Deck and Lenovo Legion Go. Despite having a desktop mode with the KDE Plasma desktop environment, it is not intended to be used as a normal desktop OS. A misconception I've seen is that SteamOS is required for maximum game compatibility on Linux. While SteamOS makes it easier to start playing Steam games on Linux, it has the same compatibility features that you can get on any other distro by installing Steam.
+				SteamOS is a specialized Arch Linux-based OS developed by Valve, for use with handheld gaming PCs such as the Steam Deck and Lenovo Legion Go. Despite having a desktop mode with the KDE Plasma desktop environment, it is not intended to be used as a normal desktop OS. It does not support normal PCs out of the box, and requires a lot of tweaking to get installed and running. You can get the same amount of compatibility out of any other distro 
 
 				<h3><a href="https://www.freebsd.org/">FreeBSD</a></h3>
-				FreeBSD is NOT Linux, but I'm putting it here to avoid confusion because some people think it is. It's actually based on Unix, which is a much older OS made by Bell Labs, that started development in 1969 and released publicly in 1973. Linux is Unix-like but not directly based on it, so naturally there are some similarities but many more differences.<br><br>These days, Unix itself isn't in development anymore, but several Unix-based operating systems are. FreeBSD, macOS, and Solaris are just a few examples. If you're reading through this guide, FreeBSD or any other Unix-based OS probably isn't for you, but again I figured I'd mention it to clear up any confusion.
+				FreeBSD is NOT Linux, but I'm putting it here to avoid confusion because some people think it is. It's actually based on Unix, which is a much older OS made by Bell Labs that started development in 1969. Linux is Unix-like but not directly based on it, so naturally there are some similarities but many more differences.<br><br>These days, Unix itself isn't in development anymore, but several Unix-based operating systems are. FreeBSD, macOS, and Solaris are just a few examples. If you're reading through this guide, FreeBSD or any other Unix-based OS probably isn't for you, but again I figured I'd mention it to clear up any confusion.
 			</div>
 
 			<h1 id="compat">Software Compatibility</h1>
