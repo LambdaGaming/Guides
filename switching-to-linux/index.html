@@ -9,7 +9,7 @@
 	<body>
 		<div class="main">
 			<h1>Switching to Linux</h1>
-			<h3 style="text-align:center">By <a href="https://github.com/LambdaGaming">OPGman<br></a>Published on June 12, 2024<br>Last updated on October 2, 2025</h3>
+			<h3 style="text-align:center">By <a href="https://github.com/LambdaGaming">OPGman<br></a>Published on June 12, 2024<br>Last updated on October 15, 2025</h3>
 			<h2>Table of Contents</h2>
 			<div class="toc">
 				<ol>
@@ -23,161 +23,301 @@
 					<li><a href="#overview">Linux Overview</a></li>
 					<ol>
 						<li><a href="#whatsadistro">What's a distro?</a></li>
-						<li><a href="#installinglinux">Installing Linux</a></li>
+						<li><a href="#terminals">Terminals</a></li>
 						<li><a href="#de">Desktop Environments</a></li>
-						<li><a href="#installingsoftware">Installing Software</a></li>
-						<ol>
-							<li><a href="#native">Native Programs</a></li>
-							<li><a href="#windows">Windows Programs</a></li>
-						</ol>
 						<li><a href="#file">File System</a></li>
 						<li><a href="#security2">Security</a></li>
 						<li><a href="#graphics">Graphics</a></li>
-						<li><a href="#misc">Misc Notes</a></li>
+						<li><a href="#software">Software Management</a></li>
+						<li><a href="#compat">Software Compatibility</a></li>
+						<li><a href="#misc">Additional Resources</a></li>
 					</ol>
 					<li><a href="#choosing">Choosing a Distro</a></li>
-					<li><a href="#compat">Software Compatibility</a></li>
-					<ol>
-						<li><a href="#compat2">Program List</a></li>
-						<li><a href="#compat3">Getting Around Compatibility Issues</a></li>
-					</ol>
+					<li><a href="#installinglinux">Installing Linux</a></li>
 					<li><a href="#conclusion">Conclusion</a></li>
 				</ol>
 			</div>
 			<h1 id="intro">Introduction</h1>
-			<p>As a long time Windows user, the idea of switching to Linux used to be nothing but a joke to me. Over the past couple years however, I've gotten fed up with many of the things Microsoft is doing with Windows, and I started looking into Linux as a daily driver. It didn't take long for me to realize that it was a suitable alternative, and eventually all of my PCs were switched over to it. This guide will cover why I think Linux is generally a better alternative to Windows, how to get started using it, and many of the differences between Linux and Windows that you should know.<br><br>
-			Before we start, please take note of a few things:
+			<p>As a long time Windows user, the idea of switching to Linux used to be nothing but a joke to me. Over the past couple years however, I've gotten fed up with many of the things Microsoft is doing with Windows, and I started looking into using Linux as a daily driver. It didn't take long for me to realize that it was a suitable alternative, and eventually all of my PCs were switched over to it. This guide will cover why I think Linux is generally a better alternative to Windows, how to get started using it, and many of the differences between Linux and Windows that you should know.<p>
+			<p>Before we start, please take note of a few things:</p>
 			<ul>
-				<li>Linux is NOT perfect, and it is NOT for everyone. If you lack any sort of technical skills and you have no interest in learning or doing your own research, you're going to quickly find yourself overwhelmed. Windows differs from Linux and many ways, and the transition is likely not going to be seamless. Some things you've done the same way on Windows for years will need to be done a different way on Linux. You might also have to sacrifice certain software because it won't run on Linux, or do extensive troubleshooting to get a specific thing working. I don't want this to deter you, though. This guide will help you through some things, and you'll be able to find a fix online for pretty much every issue you encounter.</li>
+				<li>Linux is <b>NOT</b> perfect. Going into it thinking it's going to work flawlessly and do everything better than Windows is the <b>wrong</b> mindset to have, because in most cases it simply isn't true. It's entirely <i>possible</i> for you to have a flawless experience, but it's not something you should ever expect from any operating system. The most important thing is that you need to be willing to learn and do your own research. This guide will cover a lot of ground, but it's impossible to cover everything.</li>
 				<li>This guide is mainly designed for Windows users. While macOS is mentioned occasionally throughout the guide, it's not popular enough for me to justify covering it as extensively as I did with Windows.</li>
-				<li>This guide contains a mix of my own experiences and factual information with citations. While I aim to make the information in this guide 100% accurate and easily verifiable, some information could be wrong or might lack proper citations. If you find any problems or have suggestions to add or change something, feel free to create an issue on <a href="https://github.com/LambdaGaming/lambdagaming.github.io">GitHub.</a></li>
+				<li>This guide contains a mix of my own experiences and factual information with citations. While I aim to make the information in this guide 100% accurate and easily verifiable, some information could be wrong or might lack proper citations. If you find any problems or have suggestions to add or change something, feel free to create an issue on <a href="https://github.com/LambdaGaming/Guides">GitHub.</a></li>
 			</ul></p>
 			<h1 id="why">Why Linux?</h1>
-			<p>You might be wondering why you should switch to Linux, if Windows or macOS is currently working fine for you. The short answer is concerns regarding privacy, security, and freedom, but I'll explain in detail what I mean by that. If I somehow already convinced you to switch, you can skip to the <a href="#overview">Linux Overview section.</a></p>
+			<p>This first section will cover why myself and many other people have chosen to use Linux over alternatives. If you've already decided you want to switch, you can skip to the <a href="#overview">Linux Overview section.</a></p>
 			<h2 id="privacy">Privacy</h2>
 			<hr>
-			<p>You might not realize it, but the concept of privacy in the digital world is slowly degrading, and has been <a href="https://www.britannica.com/topic/USA-PATRIOT-Act">since the early 2000s.</a> Governments, companies, and other groups are interested in <a href="https://www.privacyguides.org/en/basics/common-threats/">collecting a wide variety of information about you</a>, for several different reasons. This guide will only cover certain companies collecting your data, however, as it is the most relevant in the context of Linux.<br><br>
-			
-			Microsoft is well known for including things in Windows that <a href="https://www.privacyguides.org/en/os/windows/">put your privacy at risk.</a> Windows 10 and 11 are full of trackers and telemetry that send data that uniquely identifies you back to Microsoft, and OneDrive is known to upload your documents to the cloud without your consent. Even if you turn these things off or delete them, there's a chance they will reactivate or reinstall after a Windows update. On top of that, Windows 11 now includes a feature called Recall that takes pictures of everything you see on your screen, every 5 seconds, and has an AI analyze them so the information in them can be "recalled" later. Originally, this feature was enabled by default and the screenshots were stored in an unencrypted database on your PC. While these issues have since been fixed, the privacy concerns of having an AI monitor everything you do still remain, especially since Microsoft can make it enabled by default again, or change their privacy policy to retrieve the data collected by the AI at any time.<br><br>
-
-			Apple isn't much better. They've <a href="https://apnews.com/article/apple-iphone-siri-settlement-what-to-know-3a543c8f31256b03897cdeaca4cd9b3f">recorded people's conversations with Siri</a>, <a href="https://www.theverge.com/2024/5/20/24161152/apple-ios-17-photo-bug">failed to remove iCloud files that users deleted</a>, <a href="https://www.classaction.org/apple-privacy-lawsuit">allegedly tracked app activity even when the setting was turned off</a>, and <a href="https://support.apple.com/en-gb/122234">disabled end-to-end encryption for certain iCloud features in the UK.</a> While these privacy controversies involved the mobile and cloud spaces rather than macOS specifically, this history shows that Apple cannot be trusted with ensuring the privacy of their users.<br><br>
-			
-			Most software made by Microsoft and Apple is closed-source, meaning nobody outside of the company knows exactly what code is running on your computer. There are ways to find out without having the source code, but they're extremely technical and typically require extensive research by cybersecurity professionals. Most Linux distros on the other hand do not have any sort of data collection, and even the few that do have it turned off by default. Your privacy is much safer because most software for Linux (including Linux itself) is open source, so not only is it a lot harder to hide malicious code that steals your data, there's also very little incentive for these projects to be collecting your data to begin with, because most of them are not in it for the money.<br><br>
-
-			Some people think that online privacy doesn't matter if they have nothing to hide. I couldn't disagree more. This section is already long enough so I'm not going to rant about that, but if you're willing to have your mind changed, <a href="https://www.privacyguides.org/en/basics/why-privacy-matters/">this article tells you everything you need to know</a>. This website in general is a fantastic resource for everything related to online privacy.</p>
+			<p>You might not realize it, but the concept of privacy in the digital world is slowly degrading, and has been <a href="https://www.britannica.com/topic/USA-PATRIOT-Act">since the early 2000s.</a> Governments, companies, and other groups are interested in <a href="https://www.privacyguides.org/en/basics/common-threats/">collecting a wide variety of information about you</a>, for several different reasons. This guide will only cover certain companies collecting your data, however, as it is the most relevant in the context of Linux.</p>
+			<p>Microsoft is well known for including things in Windows that <a href="https://www.privacyguides.org/en/os/windows/">put your privacy at risk.</a> Windows 10 and 11 are full of trackers and telemetry that send data that uniquely identifies you back to Microsoft, and OneDrive is known to upload your documents to the cloud without your consent. Even if you turn these things off or delete them, there's a chance they will reactivate or reinstall after a Windows update. On top of that, Windows 11 now includes a feature called Recall that takes pictures of everything you see on your screen, every 5 seconds, and has an AI analyze them so the information in them can be "recalled" later. Originally, this feature was enabled by default and the screenshots were stored in an unencrypted database on your PC. While these issues have since been fixed, the privacy concerns of having an AI monitor everything you do still remain, especially since Microsoft can make it enabled by default again, or change their privacy policy to retrieve the data collected by the AI at any time.</p>
+			<p>Apple isn't much better. They've <a href="https://apnews.com/article/apple-iphone-siri-settlement-what-to-know-3a543c8f31256b03897cdeaca4cd9b3f">recorded people's conversations with Siri</a>, <a href="https://www.theverge.com/2024/5/20/24161152/apple-ios-17-photo-bug">failed to remove iCloud files that users deleted</a>, <a href="https://www.classaction.org/apple-privacy-lawsuit">allegedly tracked app activity even when the setting was turned off</a>, and <a href="https://support.apple.com/en-gb/122234">disabled end-to-end encryption for certain iCloud features in the UK.</a> While these privacy controversies involved the mobile and cloud spaces rather than macOS specifically, this history shows that Apple cannot be trusted with ensuring the privacy of their users.</p>
+			<p>Most software made by Microsoft and Apple is closed-source, meaning nobody outside of the company knows exactly what code is running on your computer. There are ways to find out without having the source code, but they're extremely technical and typically require extensive research by cybersecurity professionals. On the other hand, most Linux distros do not have any sort of data collection, and even the few that do have it turned off by default. Your private data is generally a lot safer because most software for Linux (including Linux itself) is open source, so not only is it a lot harder to hide malicious code that steals your data, there's also little incentive for these projects to be collecting your data to begin with, because most of them are not in it for the money.</p>
+			<p>Some people think that online privacy doesn't matter if they have nothing to hide, but I completely disagree. This section is already long enough so I'm not going to rant about that, but if you're willing to have your mind changed, <a href="https://www.privacyguides.org/en/basics/why-privacy-matters/">this article tells you everything you need to know</a>. This website in general is a fantastic resource for everything related to online privacy.</p>
 			<h2 id="security">Security</h2>
 			<hr>
-			<p>You can't have privacy without security, and while nothing is ever 100% secure, Linux-based systems are generally more secure than Windows for several reasons:
-				<ol>
-					<li>Security through obscurity. Simply put, Linux is significantly less popular in the desktop space than both Windows and macOS, so malware creators have less incentive to target it. This could certainly change as Linux grows in popularity among desktop users, but there are other factors that still limit the effectiveness of malware on Linux.</li>
-					<li>Linux uses file and group permissions to determine who is allowed to access and modify what. System files are protected with these permissions, and cannot be modified by any program unless it is running with root permissions, which requires the user to input a password.</li>
-					<li>Windows admin permissions can be used by anyone without a password, provided they're on an admin account. Not only are people accustomed to clicking “yes” for the User Account Control (UAC) prompt without reading it, but there are <a href="https://docs.redteamleaders.com/offensive-security/privilege-escalation/windows-uac-bypass-techniques">several exploits</a> that allow attackers to completely bypass the UAC prompt without the user ever knowing, some of which still work on modern Windows versions. On Linux, there isn't a "middle" account that has some admin permissions by default. Your user account either has the ability to run commands with full permissions (using a password), or it doesn't.</li>
-					<li>Unlike Windows, Linux does not allow any random program to run code at the kernel level, also called ring 0. This is extremely important, as ring 0 gives programs full access to your entire system. This is why most video game anti-cheats will not run on Linux. Many of them run at the kernel level on Windows so they can monitor for cheating by reading the memory of other programs. The only way to run programs at the kernel level on Linux is to <a href="https://www.geeksforgeeks.org/linux-unix/linux-kernel-module-programming-hello-world-program/">compile them from source and install them into the kernel</a>, which doesn't work for proprietary software like malware and anti-cheats.</li>
-					<li>Many Linux programs (and the Linux kernel itself) are open source, and created by many different people. If you have a bad actor injecting malware into a program or distro, they are they likely to affect only a very small portion of all users, due to the decentralized nature of Linux. Those affected users also have the freedom to remove that program, installing an older version, or simply not update to the affected version. Windows and macOS are developed exclusively by corporations and are not open source, so if they want to do something malicious or unwanted, it's eventually going to affect everyone due to forced updates, and you likely won't be able to do much about it.</li>
-					<li>Installing programs on Linux is generally safer than Windows due to how most apps are typically installed. Each distro has a repository of programs that have been verified to be safe. Some distros also verify that the program is stable enough to be used regularly. There are also <a href="https://flathub.org">Flatpaks</a>, which are self-contained programs that run in a partial sandbox, and also have their own verification process. These systems will be discussed in more detail later.</li>
-					<li>Windows tends to bundle security updates with content updates and bug fixes. If a content update ends up breaking something, you can roll it back, but doing so would also roll back any security patches that were included with that update. On Linux, each program and library is installed and updated separately. You can choose exactly what you want to update, and updates aren't forced unless you want them to be.</li>
-					<li>Most Windows 10 users will stop receiving security updates on <a href="https://learn.microsoft.com/en-us/lifecycle/products/windows-10-home-and-pro">October 14, 2025.</a> After that, you run the risk of using a compromised system if a security flaw is discovered and exploited, because it will not be fixed. You <i>could</i> upgrade to Windows 11, but only if it supports your hardware, and even then you'd still have the privacy issues to worry about. You could also <a href="https://www.pcgamer.com/gaming-industry/dont-want-to-switch-to-windows-11-there-is-one-last-way-to-stick-with-windows-10-a-little-longer/">get a year of extended security updates for Windows 10</a>, but to get these updates you need to do things that put your privacy even more at risk, unless you live in the <a href="https://www.pcworld.com/article/2921143/europe-forces-microsoft-into-free-extended-support-for-windows-10.html">European Economic Area.</a> Even then, you're only delaying the inevitable until October 2026.</li>
-				</ol>
-			</p>
+			<p>You can't have privacy without security, and while nothing is ever 100% secure, Linux-based systems are generally more secure than Windows for several reasons:</p>
+			<h3>Security Through Obscurity</h3>
+			<p>Linux is <a href="https://itsfoss.com/linux-market-share/">significantly less popular</a> than Windows and macOS in the desktop space, which means that malware creators have less incentive to target it. This could certainly change as Linux grows in popularity among desktop users, but there are other factors that still limit the effectiveness of malware on Linux. There's a somewhat common misconception that malware for desktop Linux doesn't exist, which isn't true. Any type of computer can be susceptible to malware infections. The risk might be low, but it's never 0%.</p>
+			<h3>Better File System Permissions</h3>
+			<p>Linux uses <a href="https://blog.geekinstitute.org/2025/05/linux-file-and-permission-management.html">file and group permissions</a> to determine who is allowed to access and modify what. Each file has read, write, and execute permissions that can be restricted to certain users or groups, and both users and programs can belong to groups. System files are protected with these permissions, and cannot be modified by any program unless it's running with root permissions, which is discussed in the next section. Windows has file system protections as well, but they're not as in-depth as Linux. Protections for system files on Windows are not consistent and sometimes don't even need admin privileges in order to modify, which opens up opportunities that malware can take advantage of.</p>
+			<h3>Better Admin Permissions</h3>
+			<p>Tying into the group permissions, Linux has a special group called root, which is basically the system group. It has access to the entire system including all protected files. Users can only gain access to this group temporarily by prepending a command with 'sudo' in the terminal, or by having a GUI program prompt for it. Sudo will require the user to enter a password, which is typically setup when the OS is installed. Root access is typically revoked once the program that required it has been closed.</p>
+			<p>Most Windows home users will have some admin permissions at all times due to how admin accounts work. This decreases security since some system files only need basic admin permissions in order to be modified. On top of that, Windows also uses a prompt (called User Account Control, or UAC) to escalate admin privileges up to the next level, which people are typically accustomed to clicking "yes" for without seeing what program is requiring it. The UAC prompts also have <a href="https://docs.redteamleaders.com/offensive-security/privilege-escalation/windows-uac-bypass-techniques">several exploits</a> that allow malicious programs to completely bypass them without the user ever knowing, some of which still work on modern Windows versions.</p>
+			<h3>No Kernel-Level Access</h3>
+			<p>Unlike Windows, Linux does not allow any random program to run code at the kernel level, also called ring 0. This is extremely important, as ring 0 gives programs full access to your entire system without the need for admin privileges. This is why most video game anti-cheats will not run on Linux. Many of them run at the kernel level on Windows so they can monitor for cheating by reading the memory of other programs. The only way to run programs at the kernel level on Linux is to compile them from source and install them into the kernel, which doesn't work for proprietary software like malware and anti-cheats.</p>
+			<h3>Transparency</h3>
+			<p>Many Linux programs (and the Linux kernel itself) are open source, which allows anyone to view the code and determine whether or not it's malicious. Many popular open source projects are audited by independent organizations and individuals to verify that the software is safe to use. Windows and macOS are developed exclusively by corporations and are not open source, so if they want to do something malicious or unwanted, it's eventually going to affect everyone due to forced updates, and you likely won't be able to do much about it.</p>
+			<h3>Verified Apps</h3>
+			<p>Installing programs on Linux is generally safer than Windows due to how most apps are typically installed. Each distro has a repository of programs that have been verified to be safe. Some distros also verify that the program is stable enough to be used regularly. There are also <a href="https://flathub.org">Flatpaks</a>, which are self-contained programs that run in a partial sandbox, and also have their own verification process. These systems will be discussed in more detail later.</p>
+			<h3>Better Updates</h3>
+			<p>Windows tends to bundle security updates with content updates and bug fixes. If a content update ends up breaking something, you can roll it back, but doing so would also roll back any security patches that were included with that update. On Linux, each program and library is installed and updated separately. You can choose exactly what you want to update, and updates aren't forced unless you want them to be.</p>
+			<h3>Long Term Support</h3>
+			<p>Windows versions are typically supported for around 10 years. Once support ends, that version will no longer receive security updates, which can potentially leave it <a href="https://www.cvedetails.com/vulnerability-list/vendor_id-26/product_id-739/Microsoft-Windows-Xp.html">permanently vulnerable.</a> There are <a href="https://massgrave.dev/windows10_eol">certain ways</a> to get extended security updates, but even with these you will eventually need to upgrade to a different OS.</p>
+			<p>Every Linux distro handles long term support differently, but generally speaking you will never have to worry about missing out on security patches or any other updates as long as you keep up with distro upgrades. These upgrades are less like moving from Windows 10 to 11 and are more like moving from Windows 11 24H2 to Windows 11 25H2. With rolling release distros, upgrades aren't even a thing because every package is constantly on the latest version. Linux is also now the only "main" option for running modern operating systems on 32-bit hardware, as Microsoft has dropped support for it with Windows 10's end of life, and Apple dropped support for it years ago.</p>
 			<h2 id="freedom">Freedom</h2>
 			<hr>
-			<p>Unlike Windows and macOS, Linux gives you absolute control over the entire system, provided that you have admin privileges. You have the freedom to install, modify, and remove absolutely anything, including parts that really shouldn't be touched because doing so could break the entire system. With Windows and macOS, you're stuck with whatever functionality Microsoft and Apple want you to have. There are many parts of both operating systems that simply cannot be removed, disabled, or modified no matter how hard you try.</p>
+			<p>Unlike Windows and macOS, Linux gives you absolute control over the entire system, provided that you have access to the sudo password mentioned earlier. You have the freedom to install, modify, and remove absolutely anything, including parts that really shouldn't be touched because doing so could break the entire system. With Windows and macOS, you're stuck with whatever functionality Microsoft and Apple want you to have. There are many parts of both operating systems that cannot be removed, disabled, or modified no matter how hard you try.</p>
 
 			<h1 id="overview">Linux Overview</h1>
-			<p>This section will cover the basics of Linux as well as some of its quirks that you should be aware of to avoid confusion later on.</p>
+			<p>This section will cover the basic functionalities and quirks of Linux including a lot of the terminology you'll come across.</p>
 			<h2 id="whatsadistro">What's a distro?</h2>
 			<hr>
-			<p>Distro is short for distribution. It's typically considered to be an operating system that runs on the Linux kernel, comes with various free open-source software (FOSS) pre-installed, is designed for desktop use, and is available to be used and distributed freely by the public. The problem is that there are many definitions, and some operating systems might fit this definition but are still not considered distros, and vice versa.<br><br>
-
-			You might hear someone refer to a distro as GNU/Linux. This is in reference to the <a href="https://www.gnu.org/">GNU operating system.</a> A lot of distros adhere to the basic philosophy of GNU, which is essentially to build an operating system using only FOSS, but most mainstream distros aren't considered free by GNU's strict definition, so they technically aren't GNU/Linux.<br><br>
-
-			The semantics of it is confusing and pretty much pointless to try to understand. The key takeaway is that most desktop operating systems that run on Linux are considered distros <i>and</i> are also referred to as GNU/Linux.</p>
+			<p>Distro is short for distribution. It's typically considered to be an operating system that runs on the Linux kernel, comes with various free open-source software (FOSS) pre-installed, is designed for desktop use, and is available to be used and distributed freely by the public. The problem is that there are many definitions, and some operating systems might fit this definition but are still not considered distros, and vice versa.</p>
+			<p>You might hear someone refer to a distro as GNU/Linux. This is in reference to the <a href="https://www.gnu.org/">GNU operating system.</a> A lot of distros adhere to the basic philosophy of GNU, which is essentially to build an operating system using only FOSS, but most mainstream distros aren't considered free by GNU's strict definition, so they technically aren't GNU/Linux.</p>
+			<p>The semantics of it is confusing and pretty much pointless to try to understand. The key takeaway is that most desktop operating systems that run on Linux are considered distros <i>and</i> are also referred to as GNU/Linux.</p>
 			
-			<h2 id="installinglinux">Installing Linux</h2>
+			<h2 id="terminals">Terminals</h2>
 			<hr>
-			<p>Installing a beginner-friendly distro is pretty straightforward, just follow the instructions it gives you as you go. What isn't always straightforward, however, is actually getting Linux to boot. Many distros just give you the ISO file and don't elaborate as to what you're supposed to do with it, so that's what this section will be about.<br><br>
-			
-			There's three things you're going to need to get Linux to boot: A USB drive large enough for your distro, a working Windows, Linux, or macOS PC, and <a href="https://etcher.balena.io/">balenaEtcher</a> installed on that PC. (Just be aware that balenaEtcher has some <a href="https://tails.net/news/rufus/index.en.html">minor privacy issues</a> despite being open source. If you're familiar with alternatives such as Raspberry Pi Imager or Rufus, I would use one of those instead, but for beginners balenaEtcher is the easiest to download and use on all platforms.) Once you have all of that, follow these steps:
-				<ol>
-					<li>Plug in the USB and open balenaEtcher.</li>
-					<li>Select the ISO file you downloaded from the website of the distro you want to use.</li>
-					<li>Select the USB drive you want to install it to.</li>
-					<li>Hit the flash button. It might take a while depending on the size of the ISO and the speed of the drive.</li>
-					<li>Once balenaEtcher says it's finished, plug the USB into the PC you want to install Linux on, and reboot the PC into the BIOS. If you're not sure how to get into the BIOS, spamming the F12 or delete key as the PC is rebooting usually works. Otherwise, you'll have to check the manual for your motherboard or laptop.</li>
-					<li>From here, the steps will be vague because every motherboard is different. Look around the BIOS for an option for USB booting. If you find it, make sure it's enabled. If you don't find it, don't worry about it.</li>
-					<li>Go to the boot section and change the first boot option to the USB drive you just plugged in. Save your changes and reboot.</li>
-					<li>If you did everything correctly, your PC should have booted the USB. You might see the bootloader selection screen, or it might have booted straight into the live image. If you're at the bootloader selection screen, just press enter to select the default option. From there, you can install the distro by following the steps it gives you.</li>
-				</ol>
-			</p>
+			<p>The terminal is a core part of the system that allows users to input commands, like the command prompt on Windows. Terminals that open in a GUI window are technically called terminal emulators, because they're replicating the functionality of the regular terminal, but they are much more customizable. People who are looking to switch to Linux often dread having to use the terminal, but the reality is that you will rarely ever have to touch it on beginner-friendly distros, where pretty much everything is done through a GUI. Even if you do have to use it at some point, it really isn't that bad. Just remember that you should never enter random commands without knowing what they do.</p>
+			<h3>Shells</h3>
+			<p>Shells are responsible for processing the commands you enter into the terminal. The most basic shells that come with most distros include Bourne Shell (sh) and Bourne Again Shell (bash). Certain shells such as Z Shell (zsh) and Friendly Interactive Shell (fish) include more advanced features like syntax highlighting, autocomplete, suggestions, git integration, and error detection. Most terminal emulators will let you change what shell it uses. You can also interact with shells outside of a terminal by using <a href="https://www.geeksforgeeks.org/linux-unix/introduction-linux-shell-shell-scripting/">shell scripts.</a></p>
 
 			<h2 id="de">Desktop Environments</h2>
 			<hr>
-			<p>Desktop environments are basically the graphical meat of the operating system. They include things like the taskbar, start menu, wallpaper, desktop icons, and the alt+tab menu. Unlike Windows, there are several desktop environments available for Linux, and they all have distinct features. Some of the most popular include <a href="https://kde.org/plasma-desktop/">KDE Plasma</a>, <a href="https://www.gnome.org/">GNOME</a>, <a href="https://en.wikipedia.org/wiki/Cinnamon_(desktop_environment)">Cinnamon</a>, <a href="https://xfce.org/">Xfce</a>, <a href="https://lxqt-project.org/">LXQt</a>, and <a href="https://mate-desktop.org/">MATE</a>. Most distros come with a desktop environment pre-installed, and many let you choose between different ones before or during installation.</p>
-
-			<h2 id="installingsoftware">Installing Software</h2>
-			<hr>
-			<h3 id="native">Native Programs</h3>
-			<p>When you install a program on Windows, you typically have to download individual exe or msi files, unless you're using the Microsoft Store. Linux is similar in some ways, and vastly different in other ways. It really depends on the distro you're running and the software you want to download. For example, Debian and Ubuntu-based distros can typically install programs from .deb files, while other distros can't. Some distros also come with a GUI software manager similar to the Microsoft Store that lets you download a wide range of software without having to touch the terminal. If you are using a beginner-friendly distro, you will almost never have to manually install something through the terminal.</p>
-			<p>Whether the software manager has a GUI frontend or not, one thing that pretty much all of them have in common is that they can install and update both system files and regular programs, even automatically in some cases. It is common to update Firefox and the Linux kernel at the same time, for example. While on the topic of system files, a common misconception is that Linux never requires a restart after updating system files. While most distros will never <i>force</i> you to restart, it's still recommended that you do so as soon as possible.</p>
-			<p>Where do these updates come from though? Who maintains them? When a program is downloaded through the software manager, it comes from a file server called a repository, or repo for short. These repos are typically hosted by the maintainer of the distro. Many distros offer multiple repos that hold different types of software, such as new releases that are being tested for stability. To ensure that everyone has a fast and stable connection to the repo, they are typically hosted by a bunch of servers around the world, called mirrors. Different organizations not directly affiliated with the distro maintainer might also host mirrors. Most beginner-friendly distros will automatically choose the mirror with the lowest ping to ensure that you have a fast and stable connection.</p>
-			<p>There are a lot of options for installing and updating software on Linux, and talking about everything would make this section extremely long. It's best to read up on the documentation provided by whatever distro you end up choosing to figure out how to use the software manager. Even distros with very little documentation should mention it since it's a core feature.</p>
-
-			<h3 id="windows">Windows Programs</h3>
-			<p>One of the main reasons people stay away from Linux is that the programs they use or the games they play on Windows don't run on Linux, or so they think. Over the past few years, there have been significant improvements toward this. Many Windows apps are capable of running on Linux through pieces of complex software called compatibility layers. These layers basically translate code written for Windows into code that Linux can understand, in real time, with little to no performance loss (and sometimes even an increase). There are three main programs you can use to run Windows programs on Linux:
-			<ul>
-				<li><a href="https://www.winehq.org/">Wine</a> - Main compatibility layer for running generic Windows apps, though certain games work fine with it too.</li>
-				<li><a href="https://github.com/ValveSoftware/Proton">Proton</a> - Heavily modified version of Wine created by Valve to be used with Steam games, but it can also be used with regular programs outside of Steam.</li>
-				<li><a href="https://www.mono-project.com/">Mono</a> - Not a compatibility layer, but it will run most .NET apps even if they were built for Windows.</li>
-			</ul>
-			There are also programs that provide a GUI frontend and additional backend support for these layers to ensure maximum compatibility. The two big ones are <a href="https://lutris.net/">Lutris</a> and <a href="https://usebottles.com/">Bottles</a>. They both have their pros and cons but I personally use Lutris for all of my Windows programs that aren't on Steam. Bottles is nice when it works but I've personally found it to be kind of finicky.</p>
-
+			<p>Desktop environments are basically the graphical meat of the operating system. They include things like the taskbar, start menu, wallpaper, desktop icons, and the alt+tab menu. Unlike Windows, there are several desktop environments available for Linux, and they all have distinct features. Some of the most popular include <a href="https://kde.org/plasma-desktop/">KDE Plasma</a>, <a href="https://www.gnome.org/">GNOME</a>, <a href="https://en.wikipedia.org/wiki/Cinnamon_(desktop_environment)">Cinnamon</a>, <a href="https://xfce.org/">Xfce</a>, <a href="https://lxqt-project.org/">LXQt</a>, and <a href="https://mate-desktop.org/">MATE</a>. Most distros come with a desktop environment pre-installed, and many let you choose between different ones before or during installation. If you're coming from Windows, KDE Plasma and Cinnamon are going to feel the most familiar.</p>
+			<h3>Tiling Window Managers</h3>
+			<p>Tiling window managers are like desktop environments without the desktop. They tile program windows to ensure that they never overlap, and support a ton of keyboard shortcuts so you never have to use the mouse. Many Linux enthusiasts swear by using them to maximize productivity. Some of the most popular include <a href="https://i3wm.org/">i3</a>, <a href="https://swaywm.org/">Sway</a>, and <a href="https://dwm.suckless.org/">dwm.</a></p>
+			
 			<h2 id="file">File System</h2>
 			<hr>
-			<p>There are several things you should note about how files work in Linux, as some things are vastly different from Windows:
-				<ul>
-					<li>NTFS is the file system mainly used by Windows. While Linux supports it for non-system drives, I do not recommend using it, as you might run into performance issues and write errors. You should format all of your drives the same as your main drive, which will usually be ext4.</li>
-					<li>Drive letters don't exist. The root (aka the very first level) of the system drive is identified by a single forward slash /. All other mounted drives are accessed through either the /mnt or /media directory, depending on how it was mounted. Removable drives (USB,CD,Floppy) are typically found in /media, while permanent drives (HDD,SSD) that get mounted at startup are found in /mnt.</li>
-					<li>User files are located in /home/[username]. Similar to the Windows AppData folder, user-specific program data is located in hidden folders inside the user folder called '.config' and '.local'. The /home directory can sometimes be located on a separate partition or physical drive depending on how it was configured during installation, but this won't change how you access it through the file system.</li>
-					<li>Extra disks are not automatically mounted on Linux unless you specifically tell it to. The easiest way to do this is to download the <a href="https://apps.gnome.org/DiskUtility/">GNOME Disk Utility</a>, click the target disk, click the partition you want to mount, click the box with the play icon in the middle, click Edit Mount Options, then disable the toggle for User Session Defaults. You can change the mount point to a different name like /mnt/Disk2 to make it easier to find if you'd like. Just don't use spaces or special characters. You might also have to click the Take Ownership option to allow other programs to write to the drive.</li>
-					<li>Disk cleanup isn't as necessary on Linux as it is on Windows, so most distros don't come with any sort of cleanup tool by default. If you want to clean up unnecessary system and app files, I recommend <a href="https://www.bleachbit.org/">BleachBit</a>. Most software and update managers will automatically clean up their own unnecessary files, if not they usually give you an option to do it manually. The only files you might need to clear manually are caches and core dumps in the root folders.</li>
-					<li>Defragging hard drives in Linux isn't needed due to the way the ext4 file system works. It scatters files around the disk to leave plenty of space for them to increase in size. Fragmentation only starts to happen when the disk is around 80% full.</li>
-					<li>Hidden files and folders are created by adding a period to the beginning of the name.</li>
-				</ul>
-			</p>
+			<h3>File Structure</h3>
+			<p>The Linux file structure is very similar to Unix, so if you're coming from macOS it's going to feel familiar. If you're coming from Windows, it's going to feel a lot less familiar for several reasons. Firstly, drive letters aren't a thing. The root (aka the very first level) of the system drive is identified by a single forward slash /. All other mounted drives are accessed through either the /mnt or /media directory, depending on how it was mounted. Removable drives (USB,CD,Floppy) are typically found in /media, while permanent drives (HDD,SSD) that get mounted at startup are found in /mnt.</p>
+			<p>Next, user files are located in /home/[username], which in some cases can be shortened to a single tilde symbol ~. Similar to the Windows AppData folder, user-specific program data is located in hidden folders inside the user folder called '.config' and '.local'. The /home directory can sometimes be located on a separate partition or physical drive depending on how it was configured during installation, but this won't change how you access it in the file structure. The rest of the system directories aren't as important for beginners to know, but you can <a href="https://linuxhandbook.com/linux-directory-structure/">still read about them</a> if you'd like.</p>
+			<h3>Mounting Drives on Startup</h3>
+			<p>Any extra internal drives that you might be using alongside your main system drive are not automatically mounted on startup unless you manually set them to. The easiest way to do this is to download the <a href="https://apps.gnome.org/DiskUtility/">GNOME Disk Utility</a>, click the target disk, click the partition you want to mount, click the box with the play icon in the middle, click Edit Mount Options, then disable the toggle for User Session Defaults. You can change the mount point to a different name like /mnt/Disk2 to make it easier to find if you'd like. Just don't use spaces or special characters. You might also have to click the Take Ownership option to allow other programs to write to the drive.</p>
+			<p>If these drives are still formatted in NTFS from Windows, I highly recommend reformatting them to ext4 before doing anything with them. Linux technically supports NTFS, but due to how the permissions work, it can cause write errors and performance issues in some cases.</p>
+			<h3>Cleanup & Maintenance</h3>
+			<p>Disk cleanup isn't as necessary on Linux as it is on Windows, so most distros don't come with any sort of cleanup tool by default. If you want to clean up unnecessary system and app files, I recommend <a href="https://www.bleachbit.org/">BleachBit</a>. Most software and update managers will automatically clean up their own unnecessary files, if not they usually give you an option to do it manually. The only files you might need to clear manually are caches and core dumps in the root folders. You can use a disk usage viewer such as <a href="https://apps.kde.org/filelight/">Filelight</a> to see how much space these files might be taking up.</p>
+			<p>Manually defragging hard drives on Linux isn't necessary. The ext4 file system will scatter files around the disk to leave plenty of space for them to increase in size. Fragmentation only starts to happen when the disk is around 80% full, which at that point Linux will start a defragging process in the background just like Windows does.</p>
 
 			<h2 id="security2">Security</h2>
 			<hr>
-			<p>I already discussed a lot of the security features Linux has in the previous section, so this subsection will only be discussing a few things that weren't covered there.
-				<ul>
-					<li>Some distros give you the option to encrypt your home folder and/or entire drive. I personally don't recommend it unless you're using a laptop that you travel with, or live in an area where burglaries and thefts are common. It can cause issues with certain programs (including Steam) and slow down older systems. It also makes data recovery in the event of a drive failure much more difficult.</li>
-					<li>Giving a program admin rights in Linux is very different from Windows. Running something as sudo gives that program or user full control over the ENTIRE system, including system files, the bootloader, and every connected hardware device. One of the easiest ways for malware to gain access to the system is to trick the user into running it as sudo. Only run things with sudo if you 100% trust it to not do anything malicious with that power.</li>
-					<li>Additional security risks are introduced when Wine (the software used to run Windows programs) is installed on your system. As Wine continues to evolve, more and more Windows programs have the ability to run out of the box on Linux, and running programs through Wine bypasses the file system's executable permissions. Furthermore, neither Linux nor Wine come with any sort of anti-virus, so there isn't a system in place to scan programs and files for malware. This isn't meant to scare you out of using Wine, it's a very useful tool that I highly recommend, but you need to be careful about what you run with it.</li>
-				</ul>
-			</p>
+			<h3>File & Group Permissions</h3>
+			<p>Linux uses <a href="https://blog.geekinstitute.org/2025/05/linux-file-and-permission-management.html">file and group permissions</a> to determine who is allowed to access and modify what. Each file has read, write, and execute permissions that can be restricted to certain users or groups, and both users and programs can belong to groups. For the most part, you won't need to mess around with file permissions too much. The most likely scenarios where you will are when a file needs to be owned by you for a program to write to it, or when a program file needs to have execute permissions to run. In these cases you can use the 'chown' and 'chmod' commands respectively.</p>
+			<h3>Root Privileges</h3>
+			<p>If you want a program to make changes to a restricted part of the system, you will need to give it temporary root permissions by running the program with the 'sudo' command, which stands for superuser do. Giving a program root permissions will allow that program to have full control over the ENTIRE system, including OS files, the bootloader, connected hardware devices, and the documents of every user. Because of the power you're granting, you should only run things with sudo if it's absolutely necessary, like updating system files or installing new programs. NEVER use sudo with commands or programs that you don't trust or recognize.</p>
+			<h3>Drive Encryption</h3>
+			<p>Some distros give you the option to encrypt your home folder and/or entire drive. I personally don't recommend it unless you're using a laptop that you travel with, or live in an area where burglaries and thefts are common. It can cause issues with certain programs (including Steam) and slow down older systems. It also makes data recovery in the event of a drive failure much more difficult.</p>
+			<h3>Risks</h3>
+			<p>Contrary to popular belief, Linux is not fully secure. There are certain factors that could make your system less secure compared to Windows. For example, many Linux distros don't come with a firewall by default, and even the ones that do come with one have it disabled by default. You can certainly install a firewall yourself (I recommend <a href="https://github.com/evilsocket/opensnitch">OpenSnitch</a>), but you have to know what you're doing in order to properly configure it. Having a firewall isn't absolutely necessary, but it's good to have that extra layer of security.</p>
+			<p>There are also additional risks introduced when Wine is installed on your system. As Wine continues to evolve, more and more Windows programs have the ability to run out of the box on Linux, and running programs through Wine bypasses the file system's executable permissions. Furthermore, neither Linux nor Wine come with any sort of anti-virus, so there isn't a system in place to scan programs and files for malware. This isn't meant to scare you out of using Wine, it's a very useful tool that I highly recommend, but you need to be careful about what you run with it.</p>
 
 			<h2 id="graphics">Graphics</h2>
 			<hr>
-			<ul>
-				<li>If you're using a laptop or a small screen with a relatively large resolution for the screen, be aware that Linux has weird DPI scaling. 100% feels too small and 125% feels too big with most desktop environments. You might be better off lowering the desktop resolution.</li>
-				<li>Linux has 2 graphical backends: X11 and Wayland. X11 is slower and less secure, but also more stable. Wayland is faster and more secure, but not as stable. X11 will be phased out by most distros at some point as Wayland continues to evolve. This doesn't mean much for you because your distro will likely handle the transition through an update, but it's still worth mentioning since some desktop environments support both and let you switch between the two pretty easily, and if you want the best security or gaming performance, you might want to use Wayland.</li>
-				<li>Multi-monitor support is weird with X11. If you have multiple monitors with varying refresh rates and/or resolutions, you might have issues with all monitors being stuck at the refresh rate or resolution of the monitor with the lowest one. Some desktop environments handle this better than others, but none of them seem to be perfect. You might have to disable the compositor, which basically enables vsync on the desktop, to get the proper framerate.</li>
-				<li>Nvidia GPUs require the installation of a proprietary driver to work properly. Most beginner-friendly distros allow you to do this, and many will even guide you through it, but be aware that some of the more advanced distros don't let you do it by default. AMD and Intel GPUs do not require a proprietary driver.</li>
-			</ul>
+			<h3>X11 & Wayland</h3>
+			<p>These are the two graphical backends available for Linux. X11 has been around for decades. It's slow and insecure but also very stable. Wayland is faster and more secure, but its also newer and less stable. Development of X11 has effectively stopped and Wayland is slowly taking its place.</p>
+			<p>What does this mean for you? Mostly nothing. The distro you end up choosing will likely handle the switch over to Wayland without you ever knowing. The only time you need to worry about X11 vs Wayland is if you have multiple monitors with different refresh rates. If you do, you need to make sure the distro and desktop environment you choose supports Wayland, because X11 will force all monitors to have the refresh rate of the monitor with the lowest one.</p>
+			<h3>Nvidia Drivers</h3>
+			<p>If you have an Nvidia GPU, you will need to install a proprietary driver for it to work properly on Linux. Most distros will prompt you to install it, but some won't allow you to install it at all, so just be aware of that when choosing a distro. Any Nvidia GPU older than the GTX 900 series won't work with the modern drivers, so you might have issues running certain games on any GPU made prior to 2015. If you have an AMD or Intel GPU, you won't have to install a proprietary driver and everything should work out of the box on most distros.</p>
 
-			<h2 id="misc">Misc Notes</h2>
+			<h2 id="software">Software Management</h2>
 			<hr>
-			<ul>
-				<li>Much like Windows, out of the box printer support is very hit or miss. I've had a USB printer from 2001 work out of the box, but a network printer from 2010 and a USB printer from 2024 both required a manual driver installation. On Windows, the 2010 network printer worked out of the box and the two USB printers didn't.</li>
-				<li>The Linux kernel has a lot of built-in drivers that add support for a wide range of USB devices. However, these drivers are typically generic and only cover basic functionalities. If you have a more specialized device, it might require manual tweaks to work properly, or it might not work at all.</li>
-				<li>You might find yourself on the toxic side of the Linux community while interacting with it. My advice is to simply ignore whatever the toxic people have to say. Some of them love to belittle newbies and gate keep because they think of the Linux community as some exclusive club that only people who are already familiar with Linux are allowed to be part of.</li>
-			</ul>
+			<p>One of the most noticeable differences between Windows and Linux is how software is installed. Each Linux distro comes with a program called a package manager. These are terminal-based (and sometimes also GUI-based) tools that are used to install, modify, update, and remove software. These software packages can be regular apps, system files, drivers, libraries, plugins, and more. When you want to install something, you will either type a command into the terminal or search for the program in your distro's GUI software manager and click install, similar to how the Microsoft Store works. Certain package managers will also let you install programs from a previously downloaded file, like how .exe and .msi files work on Windows. For example, Debian and Ubuntu-based distros will typically let you install programs from .deb files, and Fedora-based distros will accept .rpm files.</p>
+			<p>Many package managers are also capable of automatically checking for updates, and notifying you if any are available. Unlike Windows, they will never automatically download or install updates without your knowledge or permission. They will also allow you to update specific packages while holding the rest back, if needed. Another common misconception is that Linux never requires a restart after updating system files. While most distros will never force you to restart, it's still recommended that you do so as soon as possible.</p>
+			<p>Where do these packages come from though? Who maintains them? When a program is downloaded through a package manager, it comes from a file server called a repository, or repo for short. These repos are typically hosted and maintained by the distro maintainer. Many distros offer multiple repos that hold different types of software, such as new releases that are being tested for stability. To ensure that everyone has a fast and stable connection to the repo, they are typically hosted by a bunch of servers around the world, called mirrors. Different organizations not directly affiliated with the distro maintainer might also host mirrors. Most beginner-friendly distros will automatically choose the mirror with the lowest ping to ensure that you have a fast and stable connection.</p>
+			<h3>Special Software Packages</h3>
+			<p>There are three types of software packages that work differently from the rest: Flatpaks, Snaps, and AppImages. These packages are self-contained, meaning everything the main program needs to run is included in one package. They do not rely on system packages, which allows them to run on pretty much any modern distro. They are discussed in more detail below.</p>
+			<h4><a href="https://flatpak.org/">Flatpaks</a></h4>
+			<p>Flatpaks are the most popular out of the three. Most packages are hosted by Flathub, but the system is decentralized and anyone can host their own repo. Packages hosted by Flathub are verified to be safe. All Flatpaks run in a partial sandbox, meaning they cannot access certain system resources. This helps with security but also causes some compatibility issues since it cannot communicate with other apps in the normal way. The sandbox feature has also given people the wrong impression that Flatpaks are more secure than they actually are. They do not run in a full sandbox and are not completely isolated from the rest of your system, so you shouldn't assume they're safe based on that alone.</p>
+			<h4><a href="https://snapcraft.io/">Snaps</a></h4>
+			<p>Snaps are downloaded from the Snap Store, which is developed and maintained by Canonical, the developer of Ubuntu. They are mostly only seen on Ubuntu-based distros, but you can get them on pretty much any distro with the right package manager. They work similarly to Flatpaks but they support both GUI and CLI programs, are hosted in a centralized repo, and do not run in a sandbox. They are controversial in the Linux community because the backend infrastructure is closed-source.</p>
+			<h4><a href="https://appimage.org/">AppImages</a></h4>
+			<p>AppImages are downloaded as single files that can be immediately ran without installing, similar to portable apps on Windows. Many programs bundled as AppImages are also capable of updating themselves when launched. A lot of open source projects choose to use this format because it doesn't require publishing their app to another website, but the downside is that AppImages cannot be verified as safe.</p>
+
+			<h2 id="compat">Software Compatibility</h2>
+			<hr>
+			<p>One of the main reasons people stay away from Linux is because the programs they use or the games they play on Windows don't run on Linux, or so they think. Over the past few years, there have been significant improvements toward this. Many Windows apps are capable of running on Linux through compatibility tools, with little to no performance loss (and sometimes even an increase). There have even been <a href="https://www.gamingonlinux.com/2025/01/ntsync-driver-for-improving-windows-games-on-linux-with-wine-proton-should-finally-land-in-linux-kernel-614/">recent changes</a> to the Linux kernel itself that help improve performance when running Windows programs.</p>
+			<h3 id="compattools">Compatibility Tools</h3>
+			<h4><a href="https://www.winehq.org/">Wine</a></h4>
+			<p>Wine is the main compatibility tool that pretty much everything else is based on. It translates code written for Windows into code that Linux can understand, in real time. It also provides a virtual Windows file system, called a prefix, that Windows programs can use for installations or saving files to avoid breaking compatibility. Wine is good for running generic programs, but it can be very hit-or-miss with games and other graphics intensive programs.</p>
+			<h4><a href="https://www.mono-project.com/">Mono</a></h4>
+			<p>Mono is used to run .NET apps on platforms other than Windows. It usually gets automatically installed into Wine prefixes when they're first created, so manually installing it isn't necessary unless you want to run a .NET app outside of Wine.</p>
+			<h4><a href="https://github.com/ValveSoftware/Proton">Proton</a></h4>
+			<p>Proton is a heavily modified version of Wine created by Valve. It's mainly designed to be used with Steam games, but with the right tools it can be used on programs outside of Steam. It's generally not recommended to use Proton for regular programs unless it has problems running with Wine.</p>
+			<h4><a href="https://github.com/GloriousEggroll/proton-ge-custom">Proton GE</a></h4>
+			<p>Proton GE is a fork of Proton created by GloriousEggroll (hence the GE). It contains patches for specific games that aren't included in regular Proton. If you have a game that doesn't work with any version of Proton, Proton GE might be the solution.</p>
+			<h4><a href="https://github.com/sonic2kk/steamtinkerlaunch">SteamTinkerLaunch</a></h4>
+			<p>SteamTinkerLaunch is a GUI wrapper for Proton that allows you to configure a wide range of settings which would otherwise need to be done through the terminal or a shell script. It's mainly used for modding and benchmarking.</p>
+			<h4><a href="https://usebottles.com/">Bottles</a></h4>
+			<p>Bottles allows users to create customizable environments to run Windows apps through Wine. These environments are sandboxed, partly due to the fact that Bottles is installed as a Flatpak, which makes the Windows apps running inside of it safer to use, at the cost of occasionally causing compatibility issues. It also provides an interface to install dependencies into the Wine prefix with a click of a button.</p>
+			<h4><a href="https://lutris.net/">Lutris</a></h4>
+			<p>Lutris is similar to Bottles but is focused more on gaming and is more barebones. It doesn't provide the same sandboxing and dependency features that Bottles does, but it does provide install scripts for a variety of games to automatically setup the game and apply custom configs if needed. Since Lutris isn't sandboxed, it doesn't suffer from the same compatibility issues that Bottles sometimes does. It also allows users to easily use Proton or Proton GE instead of Wine, and it will automatically update Proton GE if it's installed.</p>
+			<h4><a href="https://davidotek.github.io/protonup-qt/">ProtonUp-Qt</a></h4>
+			<p>ProtonUp-Qt is a simple GUI program that makes it easy to install Proton GE, SteamTinkerLaunch, and other custom versions of Proton and Wine inside Steam and Lutris.</p>
+			<h4><a href="https://github.com/Winetricks/winetricks">WineTricks / ProtonTricks</a></h4>
+			<p>These tools provide additional control over Wine and Proton prefixes respectively. They can install dependencies, adjust Windows compatibility settings, reset or repair prefixes, and much more. If you're going to be doing any sort of work inside prefixes, these tools are highly recommended.</p>
+
+			<h3 id="virt">Virtualization Tools</h3>
+			<p>For more advanced users, running Windows programs through virtual machines might also be an option. They allow you to run Windows (or any other OS) inside your main OS, while remaining (mostly) isolated from the rest of your system. In certain cases they can be a better alternative to dual booting or messing around with compatibility tools.</p>
+			<h4><a href="https://www.virtualbox.org/">VirtualBox</a></h4>
+			<p>VirtualBox is likely the easiest virtualization software to setup and use. It's menu is easy to navigate and VMs are extremely easy to setup. Some operating systems can even be installed automatically in the background. The biggest downside to VirtualBox is that GPU resources are extremely limited, meaning graphics intensive programs won't run in the VM.</p>
+			<h4><a href="https://github.com/HarbourHeading/KVM-GPU-Passthrough">QEMU/KVM</a></h4>
+			<p>KVM is a virtualization module that's built into the Linux kernel. QEMU is simply the graphical frontend for KVM. In terms of performance it's probably better than anything else out there because of how low-level it is. By following the steps linked above, you can pass your GPU through to the VM to be able to run graphics intensive programs like games, which isn't really possible with any other virtualization software on Linux. The downside is that the setup is extremely tedious and probably not worth it in the end.</p>
+			<h4><a href="https://github.com/TibixDev/winboat">WinBoat</a></h4>
+			<p>WinBoat is a new tool that uses Docker containers and virtual machines to allow users to easily setup and run Windows apps on Linux. It's a little easier to setup than VirtualBox, but it's still in early development so bugs and instabilities are likely, and there are a lot of features missing. It definitely has the potential to be one of the best virtualization tools on Linux though, potentially even better than QEMU/KVM, so it's worth keeping in mind.</p>
+
+			<h3 id="compat2">Program List</h3>
+			<p>The following list contains popular Windows programs and how they run on Linux (if at all). Good alternatives that are confirmed to work on Linux are also listed where applicable. Steam games are not listed here. For those, you should visit <a href="https://www.protondb.com/">ProtonDB.</a></p>
+			<button id="CompatListButton" onclick="ToggleVis('CompatList')">Show Program List</button>
+			<div id="CompatList" class="hidden">
+				<table>
+					<tr>
+						<th>Program Name</th>
+						<th>Works on Linux?</th>
+						<th>Alternatives</th>
+						<th>Notes</th>
+					</tr>
+					<tr>
+						<td>Adobe Photoshop</td>
+						<td>No</td>
+						<td>GIMP, Krita</td>
+						<td>Older versions that predate Creative Cloud might work with Wine.</td>
+					</tr>
+					<tr>
+						<td>Adobe Illustrator</td>
+						<td>No</td>
+						<td>Inkscape, Krita</td>
+						<td>Older versions that predate Creative Cloud might work with Wine.</td>
+					</tr>
+					<tr>
+						<td>Core Temp & GPU-Z</td>
+						<td>No</td>
+						<td>btop++, CPU-X</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>EA App</td>
+						<td>Yes (Lutris, Bottles, Wine)</td>
+						<td>N/A</td>
+						<td>Doesn't need manual installation if game is launched from Steam.</td>
+					</tr>
+					<tr>
+						<td>Epic Games Launcher</td>
+						<td>Yes (Lutris, Bottles, Wine)</td>
+						<td>Heroic Games Launcher</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Escape From Tarkov</td>
+						<td>No</td>
+						<td>N/A</td>
+						<td>Anti-cheat doesn't support Linux, so the game will run but you can't join a match.</td>
+					</tr>
+					<tr>
+						<td>Fortnite</td>
+						<td>No</td>
+						<td>N/A</td>
+						<td>Anti-cheat doesn't support Linux, so the game will run but you can't join a match.</td>
+					</tr>
+					<tr>
+						<td>GCFScape</td>
+						<td>Yes (Wine)</td>
+						<td>VPKEdit</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>HxD / WinHex</td>
+						<td>Yes (Wine)</td>
+						<td>Okteta</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Logitech GHub</td>
+						<td>No</td>
+						<td>N/A</td>
+						<td>If you only used it for peripheral drivers, you won't need it anyway.</td>
+					</tr>
+					<tr>
+						<td>Microsoft Office / Office 365</td>
+						<td>No</td>
+						<td>LibreOffice, OpenOffice</td>
+						<td>Older versions that predate Office 365 might work with Wine.</td>
+					</tr>
+					<tr>
+						<td>Notepad++</td>
+						<td>Yes (Wine)</td>
+						<td>Kate, Nano, Vim</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Razer Synapse</td>
+						<td>No</td>
+						<td>OpenRGB, OpenRazer</td>
+						<td>Alternatives lack a lot of features including support for game integration.</td>
+					</tr>
+					<tr>
+						<td>Ubisoft Connect</td>
+						<td>Yes, with Lutris, Bottles, or Wine</td>
+						<td>N/A</td>
+						<td>Doesn't need manual installation if game is launched from Steam.</td>
+					</tr>
+					<tr>
+						<td>Valve Hammer Editor</td>
+						<td>Yes, (Wine, Proton GE)</td>
+						<td>N/A</td>
+						<td>Requires Wine/Proton GE 9.0+</td>
+					</tr>
+					<tr>
+						<td>Visual Studio 2022</td>
+						<td>Yes (VM)</td>
+						<td>N/A</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Vortex Mod Manager</td>
+						<td>Yes (Wine)</td>
+						<td>N/A</td>
+						<td>Using this through Wine is how the developers intended for Linux users.</td>
+					</tr>
+					<tr>
+						<td>WinDirStat & WizTree</td>
+						<td>Yes (Wine)</td>
+						<td>Disk Usage Analyser, Filelight</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>WinSCP</td>
+						<td>No</td>
+						<td>FileZilla</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Xbox Game Bar</td>
+						<td>No</td>
+						<td>OBS Studio, Steam (For game recording); btop++, CPU-X (For hardware stats)</td>
+						<td>Alternatives for other features are unknown.</td>
+					</tr>
+				</table>
+			</div>
+
+			<h2 id="misc">Additional Resources</h2>
+			<hr>
+			<p>This guide won't be covering everything related to Linux, but there are a TON of other resources online to help you with anything you might be stuck on or confused about. The ones I recommend are the <a href="https://wiki.archlinux.org/title/Main_page">Arch Wiki</a>, <a href="https://labex.io/linuxjourney">Linux Journey</a>, and <a href="https://www.geeksforgeeks.org/linux-unix/linux-tutorial/">Geeks for Geeks</a>. While searching online for an answer to something, you might find yourself on the toxic side of the Linux community. My advice is to simply ignore whatever the toxic people have to say. Some of them love to belittle newbies and gate keep because they think of the Linux community as some exclusive club, but given the openness of Linux and everything related to it, newbies should be welcomed into the community with open arms.</p>
 
 			<h1 id="choosing">Choosing a Distro</h1>
-			<p>If you're brand new to Linux and want to jump in right away without having to worry about picking a distro, skip this section and just go with <a href="https://www.linuxmint.com/">Mint</a>. It's a good general-purpose OS with a clean and minimalist desktop environment that'll feel familiar if you're coming from Windows. You can always live boot or dual boot before fully committing to a distro, so if you don't like it you can just try another one.<br><br>
-
-			If you're interested in seeing what's out there and what the differences are between popular distros, you can continue reading through this section. Just note that I won't be covering super niche or obscure distros here. Anything that isn't already popular isn't worth using for most people, since you're much more likely to run into problems regarding usability, stability, software availability, and documentation.<br><br>
-				
-			Also note that all of the distros here are ordered by a beginner friendliness ranking that I personally chose. A 10/10 doesn't mean it's the best overall, it just means beginners will likely have a very easy time adjusting to it.</p>
+			<p>Now that you've learned about the basics of Linux, it's time to choose a distro! Below is a list of every popular distro, ranked from most beginner-friendly to least. If you don't feel like reading through the whole list and want to jump in right away, go with <a href="https://www.linuxmint.com/">Mint</a>. It's a good general-purpose OS with a clean and minimalist desktop environment that'll feel familiar if you're coming from Windows. You can always live boot or dual boot before fully committing to a distro, so if you don't like it you can just try another one.</p>
+			<p>If you're interested in seeing what's out there and what the differences are between popular distros, you can continue reading through this section. Just note that super niche or obscure distros won't be covered here. Anything that isn't already popular isn't worth using for most people, since you're much more likely to run into problems regarding usability, stability, software availability, and documentation.</p>
 
 			<button id="DistroListButton" onclick="ToggleVis('DistroList')">Show Distro List</button>
 			<div id="DistroList" class="hidden">
@@ -499,164 +639,30 @@
 				</ul>
 	
 				<h3><a href="https://store.steampowered.com/steamos">SteamOS</a></h3>
-				SteamOS is a specialized Arch Linux-based OS developed by Valve, for use with handheld gaming PCs such as the Steam Deck and Lenovo Legion Go. Despite having a desktop mode with the KDE Plasma desktop environment, it is not intended to be used as a normal desktop OS. It does not support normal PCs out of the box, and requires a lot of tweaking to get installed and running. If you want a distro similar to SteamOS that you can use on your desktop PC, Bazzite is probably the closest you can get.
+				SteamOS is a specialized Arch Linux-based OS developed by Valve, for use with handheld gaming PCs such as the Steam Deck and Lenovo Legion Go. Despite having a desktop mode with the KDE Plasma desktop environment, it is not intended to be used as a normal desktop OS. It does not support normal PCs out of the box, and requires a lot of tweaking to get installed and running. If you want a distro similar to SteamOS that you can use on your desktop PC, check out Bazzite.
 
 				<h3><a href="https://www.freebsd.org/">FreeBSD</a></h3>
-				FreeBSD is NOT Linux, but I'm putting it here to avoid confusion because some people think it is. It's actually based on Unix, which is a much older OS made by Bell Labs that started development in 1969. Linux is Unix-like but not directly based on it, so naturally there's some similarities but there are many more differences.<br><br>These days, Unix itself isn't in development anymore, but several Unix-based operating systems are. FreeBSD, macOS, and Solaris are just a few examples. If you're reading through this guide, FreeBSD or any other Unix-based OS probably isn't for you, but again I figured I'd mention it to clear up any confusion.
+				FreeBSD is NOT Linux, but I'm putting it here to avoid confusion because some people think it is. It's actually based on Unix, which is a much older OS made by Bell Labs that started development in 1969. Linux is Unix-like but not directly based on it, so naturally there's some similarities but there are many more differences.<br><br>These days, Unix itself isn't in development anymore, but several Unix-based operating systems are. FreeBSD, macOS, and Solaris are just a few examples. If you're reading through this guide, FreeBSD or any other Unix-based OS probably isn't for you.
 			</div>
 
-			<h1 id="compat">Software Compatibility</h1>
-			<p>The following list contains popular Windows programs and how they run on Linux (if at all). Good alternatives that are confirmed to work on Linux are also listed where applicable. Steam games are not listed here. For those, you should visit <a href="https://www.protondb.com/">ProtonDB.</a></p>
-			<h2 id="compat2">Program List</h2>
-			<hr>
-			<button id="CompatListButton" onclick="ToggleVis('CompatList')">Show Program List</button>
-			<div id="CompatList" class="hidden">
-				<table>
-					<tr>
-						<th>Program Name</th>
-						<th>Works on Linux?</th>
-						<th>Alternatives</th>
-						<th>Notes</th>
-					</tr>
-					<tr>
-						<td>Adobe Photoshop</td>
-						<td>No</td>
-						<td>GIMP, Krita</td>
-						<td>Older versions that predate Creative Cloud might work with Wine.</td>
-					</tr>
-					<tr>
-						<td>Adobe Illustrator</td>
-						<td>No</td>
-						<td>Inkscape, Krita</td>
-						<td>Older versions that predate Creative Cloud might work with Wine.</td>
-					</tr>
-					<tr>
-						<td>Core Temp & GPU-Z</td>
-						<td>No</td>
-						<td>btop++, CPU-X</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>EA App</td>
-						<td>Yes, with Lutris, Bottles, or Wine</td>
-						<td>N/A</td>
-						<td>Doesn't need manual installation if game is launched from Steam.</td>
-					</tr>
-					<tr>
-						<td>Epic Games Launcher</td>
-						<td>Yes, with Lutris, Bottles, or Wine</td>
-						<td>Heroic Games Launcher</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Escape From Tarkov</td>
-						<td>No</td>
-						<td>N/A</td>
-						<td>Anti-cheat doesn't support Linux, so the game will run but you can't join a match.</td>
-					</tr>
-					<tr>
-						<td>Fortnite</td>
-						<td>No</td>
-						<td>N/A</td>
-						<td>Anti-cheat doesn't support Linux, so the game will run but you can't join a match.</td>
-					</tr>
-					<tr>
-						<td>GCFScape</td>
-						<td>Yes, with Wine</td>
-						<td>VPKEdit</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>HxD / WinHex</td>
-						<td>Yes, with Wine</td>
-						<td>Okteta</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Logitech GHub</td>
-						<td>No</td>
-						<td>N/A</td>
-						<td>If you only used it for peripheral drivers, you won't need it anyway.</td>
-					</tr>
-					<tr>
-						<td>Microsoft Office / Office 365</td>
-						<td>No</td>
-						<td>LibreOffice, OpenOffice</td>
-						<td>Older versions that predate Office 365 might work with Wine.</td>
-					</tr>
-					<tr>
-						<td>Notepad++</td>
-						<td>Yes, with Wine</td>
-						<td>Kate, Nano, Vim</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Razer Synapse</td>
-						<td>No</td>
-						<td>OpenRGB, OpenRazer</td>
-						<td>Alternatives lack a lot of features including support for game integration.</td>
-					</tr>
-					<tr>
-						<td>Ubisoft Connect</td>
-						<td>Yes, with Lutris, Bottles, or Wine</td>
-						<td>N/A</td>
-						<td>Doesn't need manual installation if game is launched from Steam.</td>
-					</tr>
-					<tr>
-						<td>Valve Hammer Editor</td>
-						<td>Yes, with Wine or Proton GE</td>
-						<td>N/A</td>
-						<td>Requires Wine/Proton GE 9.0+</td>
-					</tr>
-					<tr>
-						<td>Visual Studio 2022</td>
-						<td>No</td>
-						<td>N/A</td>
-						<td>Runs fine in a Windows 10/11 virtual machine.</td>
-					</tr>
-					<tr>
-						<td>Vortex Mod Manager</td>
-						<td>Yes, with Wine</td>
-						<td>N/A</td>
-						<td>Using this through Wine is how the developers intended for Linux users.</td>
-					</tr>
-					<tr>
-						<td>WinDirStat & WizTree</td>
-						<td>Yes, with Wine</td>
-						<td>Disk Usage Analyser, Filelight</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>WinSCP</td>
-						<td>No</td>
-						<td>FileZilla</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Xbox Game Bar</td>
-						<td>No</td>
-						<td>OBS Studio, Steam (For game recording); btop++, CPU-X (For hardware stats)</td>
-						<td>Alternatives for other features are unknown.</td>
-					</tr>
-				</table>
-			</div>
-
-			<h2 id="compat3">Getting Around Compatibility Issues</h2>
-			<hr>
-			<p>If you'd really like to switch to Linux but can't due to an app that isn't compatible, theres a few things you can try:</p>
-			<ul>
-				<li>Double check to make sure the app 100% doesn't run on Linux. Look for a Linux port and try to run the app with different versions of Wine and Proton.</li>
-				<li>Look for a Linux alternative to the app and use that if possible.</li>
-				<li>Dual boot Windows when you need to use that software.</li>
-				<li>See if the app will run in a Windows virtual machine on Linux. VirtualBox is the easiest one to setup, just be aware that most programs with advanced 3D graphics aren't going to work properly due to restrictions in the VM.</li>
-			</ul>
+			<h1 id="installinglinux">Installing Linux</h1>
+			<p>Now that you've picked a distro, it's time to install it! Installing a beginner-friendly distro is pretty straightforward, just follow the instructions it gives you as you go. What isn't always straightforward, however, is actually getting Linux to boot. Many distros just give you the ISO file and don't elaborate as to what you're supposed to do with it, so that's what this section will be about.</p>
+			<p>There's three things you're going to need to get Linux to boot: A USB drive large enough for your distro, a working Windows, Linux, or macOS PC, and <a href="https://etcher.balena.io/">balenaEtcher</a> installed on that PC. (Just be aware that balenaEtcher has some <a href="https://tails.net/news/rufus/index.en.html">minor privacy issues</a> despite being open source. If you're familiar with alternatives such as Raspberry Pi Imager or Rufus, I would use one of those instead, but for beginners balenaEtcher is the easiest to download and use on all platforms.) Once you have all of that, follow these steps:</p>
+			<ol>
+				<li>Plug in the USB and open balenaEtcher.</li>
+				<li>Select the ISO file you downloaded from the website of the distro you want to use.</li>
+				<li>Select the USB drive you want to install it to.</li>
+				<li>Hit the flash button. It might take a while depending on the size of the ISO and the speed of the drive.</li>
+				<li>Once balenaEtcher says it's finished, plug the USB into the PC you want to install Linux on, and reboot the PC into the BIOS. If you're not sure how to get into the BIOS, spamming the F12 or delete key as the PC is rebooting usually works. Otherwise, you'll have to check the manual for your motherboard or laptop.</li>
+				<li>From here, the steps will be vague because every motherboard is different. Look around the BIOS for an option for USB booting. If you find it, make sure it's enabled. If you don't find it, don't worry about it.</li>
+				<li>Go to the boot section and change the first boot option to the USB drive you just plugged in. Save your changes and reboot.</li>
+				<li>If you did everything correctly, your PC should have booted the USB. You might see the bootloader selection screen, or it might have booted straight into the live image. If you're at the bootloader selection screen, just press enter to select the default option. From there, you can install the distro by following the steps it gives you.</li>
+			</ol>
 
 			<h1 id="conclusion">Conclusion</h1>
-			<p>If you're wondering whether or not you should switch to Linux, my answer is YES! Windows 10 will no longer receive security updates after October 2025, and Windows 11 is getting worse with every update. Meanwhile, all aspects of Linux are constantly improving, and there's a ton of different options to choose from. I only made the switch in early 2024 after being a life-long Windows user because it was evident to me that Microsoft wasn't interested in actually making Windows better; they just want to appease their shareholders by chasing trends and adding features that the average user couldn't care less about, and sacrificing people's privacy and security while doing so. They've already overstepped their boundaries with Recall, so who knows what they're going to be trying throughout Windows 11's lifespan.<br><br>
-
-			Despite being a Windows user for so long (and even liking Windows 11 at launch), I haven't looked back at all since I switched. Seeing what Linux and the rest of the open source community has to offer really changed my perspective. Take the tabbed file explorer in Windows 11 for example. I was hyped for this feature, not realizing that various file browsers for Linux have had it for years. Unlike Windows, you don't have to wait several years for useful features like that to be added because of company politics or bureaucracy. The only limitations when it comes to Linux are your free time and technical skills, which brings me to my final point.<br><br>
-				
-			Some people argue that Linux isn't good for people who aren't familiar with computers due to its complex nature. While there is some truth to this, Linux doesn't have to be complex to the average user. Choosing the right distro and configuring it properly can make them feel right at home. Mint, for example, has an option for auto updates, which is critical for people who don't know much about computers because it would otherwise never get updated. No matter what your technical background is, I think Linux is at least worth trying. Theres many ways to do it, it doesn't take much to get started, and most importantly, it's free!</p>
+			<p>If you've made it all the way through the guide, then congratulations, you're now a Linux user! The end of this guide marks the beginning of your journey. Don't be discouraged if things start off a little rough. It's a brand new operating system and it could take some time to get used to, especially if you're looking to do more advanced things with it. If you need help, you can always refer back to this guide or any other resource, or you could just ask me. There's a decent chance that any problem you encounter is similar to one I've encountered. One of my favorite things about Linux is that once you fix the problems you're having, you usually won't have to deal with them again.</p>
+			<p>If you <i>haven't</i> made it all the way through the guide and instead skipped to the end without installing Linux, that's okay too. There's a lot to unpack here and I don't blame you if you find it to be overwhelming. If you have any questions feel free to ask me. Linux isn't going anywhere, so you can always come back and try again later.</p>
+			<p>Either way, thank you for being interested in my guide and Linux in general. I'm passionate about this because I believe everyone deserves privacy, security, and freedom, and as far as desktop operating systems go, Linux is currently our only option for all of those things. Like I said in the intro, if you find any problems or have suggestions to add or change something, feel free to create an issue on <a href="https://github.com/LambdaGaming/Guides">GitHub.</a></p>
 		</div>
 	</body>
 </html>
