@@ -9,7 +9,7 @@
 	<body>
 		<div class="main">
 			<h1>Switching to Linux</h1>
-			<h3 style="text-align:center">By <a href="https://github.com/LambdaGaming">OPGman<br></a>Published on June 12, 2024<br>Last updated on October 15, 2025</h3>
+			<h3 style="text-align:center">By <a href="https://github.com/LambdaGaming">OPGman<br></a>Published on June 12, 2024<br>Last updated on October 20, 2025</h3>
 			<h2>Table of Contents</h2>
 			<div class="toc">
 				<ol>
@@ -321,42 +321,10 @@
 
 			<button id="DistroListButton" onclick="ToggleVis('DistroList')">Show Distro List</button>
 			<div id="DistroList" class="hidden">
-				<h3><a href="https://zorin.com/">Zorin OS</a></h3>
-				Zorin OS is a very simple OS that is ideal for someone who only needs basic apps and doesn't like to tinker with their OS outside of basic personalization. It can certainly be used by those who are more technically inclined, just be aware that it is tailored toward people who are new to Linux.
+				<h3><a href="https://www.linuxmint.com/">Mint</a></h3>
+				<p>Mint is an excellent general-purpose OS that comes with a wide variety of software pre-installed. The Cinnamon DE feels similar to Windows while also being lightweight and minimalistic. While the personalization options aren't as in-depth as you might expect, it's a solid choice for most Windows users.</p>
 				<ul>
 					<li>Beginner friendliness: 10/10</li>
-					<li>Includes starter guide: Yes</li>
-					<li>Includes GUI software manager: Yes</li>
-					<li>Base distro: Ubuntu</li>
-					<li>Default desktop environment: Customized GNOME (multiple variants available, some locked behind Pro version)</li>
-					<li>Release type: Irregular</li>
-					<li>Notes</li>
-					<ul>
-						<li>The "Pro" version, which is $48, is advertised as coming with a suite of professional-grade software. While this is true, they fail to mention that these programs are not exclusive to Zorin OS and can be downloaded for free on Linux, Mac, and Windows. Some of the programs include Blender, Inkscape, GIMP, FreeCAD, Krita, OBS Studio, and VirtualBox. The only exclusive things you're paying for with the Pro version are the extra desktop environments.</li>
-					</ul>
-				</ul>
-				<img src="zorin.png">
-	
-				<h3><a href="https://elementary.io">elementary OS</a></h3>
-				Elementary OS is another very basic OS, though this one is catered more toward macOS users. It comes with a lot of basic but useful apps, and provides a decent amount of settings. Much like Zorin OS, this is ideal for those who are not technically inclined and only need basic functionality.
-				<ul>
-					<li>Beginner friendliness: 9/10</li>
-					<li>Includes starter guide: Yes</li>
-					<li>Includes GUI software manager: Yes</li>
-					<li>Base distro: Ubuntu</li>
-					<li>Default desktop environment: Pantheon</li>
-					<li>Release type: Irregular</li>
-					<li>Notes</li>
-					<ul>
-						<li>When downloading the ISO, the download page will try to get you to pay for it. You can get it for free by entering 0 for the price.</li>
-					</ul>
-				</ul>
-				<img src="elementary.png">
-	
-				<h3><a href="https://www.linuxmint.com/">Mint</a></h3>
-				Mint is an excellent general-purpose OS that comes with a wide variety of software pre-installed. The Cinnamon DE feels similar to Windows while also being lightweight and minimalistic. While the personalization options aren't as in-depth as you might expect, it's a solid choice for most Windows users.
-				<ul>
-					<li>Beginner friendliness: 9/10</li>
 					<li>Includes starter guide: Yes (After installing)</li>
 					<li>Includes GUI software manager: Yes</li>
 					<li>Base distro: Ubuntu</li>
@@ -364,25 +332,69 @@
 					<li>Release type: Periodical, roughly every 12 months</li>
 				</ul>
 				<img src="mint.png">
+				
+				<h3><a href="https://zorin.com/">Zorin OS</a></h3>
+				<p>Zorin OS is a very simple OS that is designed for beginners who are coming from Windows. It comes with a lot of generic programs pre-installed and provides a UI layout that is familiar and easy to navigate, making it ideal for people who don't have the knowledge or interest in tinkering with their OS. It loses a point for the pro version being misleading. The pro version states it comes with a suite of professional-grade software, and while this is true, they fail to mention that these programs are FOSS that can be downloaded for free on any platform. The only exclusive things you're paying for with the pro version are the extra desktop environments.</p>
+				<ul>
+					<li>Beginner friendliness: 9/10</li>
+					<li>Includes starter guide: Yes</li>
+					<li>Includes GUI software manager: Yes</li>
+					<li>Base distro: Ubuntu</li>
+					<li>Default desktop environment: Customized GNOME (multiple variants available, some locked behind Pro version)</li>
+					<li>Release type: Irregular</li>
+				</ul>
+				<img src="zorin.png">
+	
+				<h3><a href="https://elementary.io">elementary OS</a></h3>
+				<p>Elementary OS is another very basic OS, though this one is catered more toward macOS users. It comes with a lot of basic but useful apps, and provides a decent amount of settings. Much like Zorin OS, this is ideal for those who are not technically inclined and only need basic functionality. It loses a point for the download being made to look like you have to pay for it. You can get it for free by entering 0 for the price.</p>
+				<ul>
+					<li>Beginner friendliness: 9/10</li>
+					<li>Includes starter guide: Yes</li>
+					<li>Includes GUI software manager: Yes</li>
+					<li>Base distro: Ubuntu</li>
+					<li>Default desktop environment: Pantheon</li>
+					<li>Release type: Irregular</li>
+				</ul>
+				<img src="elementary.png">
 	
 				<h3><a href="https://ubuntu.com/download/desktop">Ubuntu</a></h3>
-				Ubuntu is another general-purpose OS. It comes with a small amount of software, mainly tailored for office use. The DE is more similar to macOS than Windows. Overall it's simple but robust, which is why it's used as a base for so many other distros.
+				<p>Ubuntu is another general-purpose OS. It comes with a small amount of software, mainly tailored for office use. The DE is more similar to macOS than Windows. Overall it's simple but robust, which is why it's used as a base for so many other distros. Just note that if you want a different desktop environment, you'll need to get Lubuntu (Lxqt), Kubuntu (KDE Plasma), or Xubuntu (Xfce), which are different distros not directly associated with Ubuntu or each other.</p>
 				<ul>
-					<li>Beginner friendliness: 8/10</li>
+					<li>Beginner friendliness: 9/10</li>
 					<li>Includes starter guide: Yes</li>
 					<li>Includes GUI software manager: Yes</li>
 					<li>Base distro: Debian</li>
 					<li>Default desktop environment: GNOME</li>
 					<li>Release type: Periodical, every 6 months</li>
-					<li>Notes</li>
-					<ul>
-						<li>If you want a different desktop environment, you'll need to get Lubuntu (Lxqt), Kubuntu (KDE Plasma), or Xubuntu (Xfce), which are different distros not directly associated with Ubuntu</li>
-					</ul>
 				</ul>
 				<img src="ubuntu.png">
 	
+				<h3><a href="https://pop.system76.com/">Pop!_OS</a></h3>
+				<p>Pop!_OS is like a more specialized Ubuntu. It's tailored for power users who do a variety of tasks such as programming, gaming, and creative works. Note that this is one of the few distros that has full disk encryption enabled by default, which could cause issues with certain software.</p>
+				<ul>
+					<li>Beginner friendliness: 8/10</li>
+					<li>Includes starter guide: No</li>
+					<li>Includes GUI software manager: Yes</li>
+					<li>Base distro: Ubuntu</li>
+					<li>Default desktop environment: Customized GNOME (Soon switching to COSMIC)</li>
+					<li>Release type: Periodical, roughly every 6-8 months</li>
+				</ul>
+				<img src="pop.png">
+
+				<h3><a href="https://manjaro.org/">Manjaro</a></h3>
+				<p>Manjaro is a general-purpose OS that comes with a variety of software pre-installed, but it's a bit more complex due to how it works under the hood. The distro is based on Arch Linux, but it uses its own repositories. The Manjaro team tests software updates being pushed to the Arch repos before pushing them to their own repos, for the sake of stability. This is a great idea on paper, but in reality it often causes Manjaro to be less stable than Arch due to the delays between patches. Despite these flaws, it's still a fast and easy way to get introduced to the Arch ecosystem.</p>
+				<ul>
+					<li>Beginner friendliness: 7/10</li>
+					<li>Includes starter guide: Yes</li>
+					<li>Includes GUI software manager: Yes</li>
+					<li>Base distro: Arch</li>
+					<li>Default desktop environments: KDE Plasma, Xfce, GNOME, Cinnamon</li>
+					<li>Release type: Rolling</li>
+				</ul>
+				<img src="manjaro.png">
+
 				<h3><a href="https://bazzite.gg/">Bazzite</a></h3>
-				Bazzite is a gaming-focused distro that comes with a handful of gaming-related software pre-installed. This software includes but is not limited to Steam, Lutris, ProtonPlus, Protontricks, Distrobox, and Waydroid. There are also extra drivers and tweaks included to ensure maximum compatibility out of the box.
+				<p>Bazzite is a gaming-focused distro that comes with a handful of gaming-related software pre-installed. This software includes but is not limited to Steam, Lutris, ProtonPlus, Protontricks, Distrobox, and Waydroid. There are also extra drivers and tweaks included to ensure maximum compatibility out of the box. Programs are mainly installed as Flatpaks, so it might be difficult for beginners to install non-Flatpak software.</p>
 				<ul>
 					<li>Beginner friendliness: 7/10</li>
 					<li>Includes starter guide: Yes (Online only)</li>
@@ -390,36 +402,13 @@
 					<li>Base distro: Fedora</li>
 					<li>Default desktop environments: GNOME, KDE Plasma</li>
 					<li>Release type: Irregular</li>
-					<li>Notes</li>
-					<ul>
-						<li>It might be difficult for beginners to install certain software if it isn't available as a Flatpak.</li>
-						<li>Support for handheld PCs is also included.</li>
-						<li>If you choose to use KDE Plasma, it will come with the same themes that are available on SteamOS.</li>
-						<li>The desktop environment in the screenshot is KDE Plasma with the VGUI2 (2003 Steam) theme applied.</li>
-					</ul>
 				</ul>
 				<img src="bazzite.png">
 	
-				<h3><a href="https://pop.system76.com/">Pop!_OS</a></h3>
-				Pop!_OS is like a more specialized Ubuntu. It's tailored for power users who do a variety of tasks such as programming, gaming, and creative works.
-				<ul>
-					<li>Beginner friendliness: 7/10</li>
-					<li>Includes starter guide: No</li>
-					<li>Includes GUI software manager: Yes</li>
-					<li>Base distro: Ubuntu</li>
-					<li>Default desktop environment: Customized GNOME (Soon switching to COSMIC)</li>
-					<li>Release type: Periodical, roughly every 6-8 months</li>
-					<li>Notes</li>
-					<ul>
-						<li>Full-disk encryption is enabled by default and applied during installation.</li>
-					</ul>
-				</ul>
-				<img src="pop.png">
-	
 				<h3><a href="https://nobaraproject.org/">Nobara</a></h3>
-				Nobara is an improved version of Fedora with quality of life features added. Most notably, it allows users to easily install proprietary software. It's targeted towards gamers but it's not as gaming-centric as something like Bazzite.
+				<p>Nobara is an improved version of Fedora with quality of life features added. Most notably, it allows users to easily install proprietary software. It's targeted towards gamers but it's not as gaming-centric as something like Bazzite.</p>
 				<ul>
-					<li>Beginner friendliness: 7/10</li>
+					<li>Beginner friendliness: 6/10</li>
 					<li>Includes starter guide: Yes (Online only)</li>
 					<li>Includes GUI software manager: Yes</li>
 					<li>Base distro: Fedora</li>
@@ -427,42 +416,21 @@
 					<li>Release type: Irregular</li>
 				</ul>
 				<img src="nobara.png">
-	
+
 				<h3><a href="https://www.debian.org/">Debian</a></h3>
-				Debian is a very stable and robust distro. Software versions are typically held back until it's been verified to not cause bugs or other types of compatibility issues. It offers a wide variety of desktop environments but comes with a minimal amount of software, making it not as straightforward to use as some other distros.
+				<p>Debian is a very stable and robust distro. Software versions are typically held back until it's been verified to not cause bugs or other types of compatibility issues. It offers a wide variety of desktop environments but comes with a minimal amount of software, making it not as straightforward to use as some other distros.</p>
 				<ul>
-					<li>Beginner friendliness: 7/10</li>
+					<li>Beginner friendliness: 6/10</li>
 					<li>Includes starter guide: No</li>
 					<li>Includes GUI software manager: Yes</li>
 					<li>Base distro: None</li>
 					<li>Default desktop environments: Cinnamon, GNOME, KDE Plasma, Xfce, LXDE, Lxqt, MATE</li>
-					<li>Release type: Irregular</li>
-					<li>Notes</li>
-					<ul>
-						<li>The main ISO doesn't support live booting and is only for installing. If you want to live boot Debian, you will need to <a href="https://cdimage.debian.org/images/release/current-live/amd64/iso-hybrid/">download a separate ISO.</a></li>
-						<li>The desktop environment in the screenshot is Cinnamon with pre-installed themes applied.</li>
-					</ul>
+					<li>Release type: Periodical, roughly every 2 years</li>
 				</ul>
 				<img src="debian.png">
-	
-				<h3><a href="https://manjaro.org/">Manjaro</a></h3>
-				Manjaro is a general-purpose OS that comes with a variety of software pre-installed, but it's a bit more complex due to how it works under the hood. The distro is based on Arch Linux, but it uses its own repositories. The Manjaro team tests software updates being pushed to the Arch repos before pushing them to their own repos, for the sake of stability. This is a great idea on paper but in reality Manjaro isn't much more stable than Arch.
-				<ul>
-					<li>Beginner friendliness: 6/10</li>
-					<li>Includes starter guide: Yes</li>
-					<li>Includes GUI software manager: Yes</li>
-					<li>Base distro: Arch</li>
-					<li>Default desktop environments: KDE Plasma, Xfce, GNOME, Cinnamon</li>
-					<li>Release type: Rolling</li>
-					<li>Notes</li>
-					<ul>
-						<li>On top of Manjaro having general stability issues, having separate repos also creates another problem where the Arch User Repository (AUR) can require a package version that's available on Arch but not Manjaro, which can prevent users from installing, updating, or launching affected apps, sometimes for several weeks.</li>
-					</ul>
-				</ul>
-				<img src="manjaro.png">
-	
+
 				<h3><a href="https://get.opensuse.org/desktop/">openSUSE</a></h3>
-				openSUSE is catered more towards technical people but it's not insanely complex to get into. It offers two separate versions that differ in the way the distro receives updates. Tumbleweed is a rolling release and is always running the newest software, while Leap receives one major update per year and does not constantly push new software versions. Despite being a rolling release distro, Tumbleweed packages are tested to ensure stability, similar to Manjaro but it's actually stable.
+				<p>openSUSE is catered more towards technical people but it's not insanely complex to get into. It offers two separate versions that differ in the way the distro receives updates. Tumbleweed is a rolling release and is always running the newest software, while Leap receives one major update per year and does not constantly push new software versions. Despite being a rolling release distro, Tumbleweed packages are tested to ensure stability, similar to Manjaro but it's actually stable.</p>
 				<ul>
 					<li>Beginner friendliness: 6/10</li>
 					<li>Includes starter guide: Yes (After installing)</li>
@@ -470,16 +438,11 @@
 					<li>Base distro: Debian</li>
 					<li>Default desktop environments: KDE Plasma, GNOME, Xfce</li>
 					<li>Release type: Rolling (Tumbleweed); Periodical, every 12 months (Leap)</li>
-					<li>Notes</li>
-					<ul>
-						<li>Only the Tumbleweed version supports live booting, and only as a separate ISO that you can find <a href="https://get.opensuse.org/tumbleweed/?type=desktop#download">below the main Tumbleweed downloads.</a></li>
-						<li>The desktop environment in the screenshot is KDE Plasma.</li>
-					</ul>
 				</ul>
 				<img src="opensuse.png">
 	
 				<h3><a href="https://garudalinux.org/editions">Garuda</a></h3>
-				Garuda Linux is a highly customized version of Arch that includes a lot of quality of life features, including a central hub for configuring and maintaining the system. It's similar to Manjaro but it's slightly less intuitive in some areas.
+				<p>Garuda Linux is a highly customized version of Arch that includes a lot of quality of life features, including a central hub for configuring and maintaining the system. It's similar to Manjaro but it's slightly less intuitive in some areas.</p>
 				<ul>
 					<li>Beginner friendliness: 6/10</li>
 					<li>Includes starter guide: No</li>
@@ -496,7 +459,7 @@
 				<img src="garuda.png">
 	
 				<h3><a href="https://fedoraproject.org/workstation/">Fedora</a></h3>
-				Fedora is also similar to Ubuntu but with a much larger focus on open source software, privacy, and workloads. It's backed by Red Hat, creator of RHEL, so some functionalities that are commonly seen in the enterprise ecosystem such as virtual machines and containers are included by default. Most beginners should avoid it unless they are only going to be using open source software.
+				<p>Fedora is also similar to Ubuntu but with a much larger focus on open source software, privacy, and workloads. It's backed by Red Hat, creator of RHEL, so some functionalities that are commonly seen in the enterprise ecosystem such as virtual machines and containers are included by default. Most beginners should avoid it unless they are only going to be using open source software.</p>
 				<ul>
 					<li>Beginner friendliness: 6/10</li>
 					<li>Includes starter guide: Yes (Not very detailed)</li>
@@ -508,7 +471,7 @@
 				<img src="fedora.png">
 	
 				<h3><a href="https://endeavouros.com/">EndeavourOS</a></h3>
-				EndeavourOS is a somewhat bare bones distro. It comes with a minimal amount of software pre-installed; just a basic desktop with a web browser. It's a good choice for people who want to use Arch without going through the hassle of setting it up.
+				<p>EndeavourOS is a somewhat bare bones distro. It comes with a minimal amount of software pre-installed; just a basic desktop with a web browser. It's a good choice for people who want to use Arch without going through the hassle of setting it up.</p>
 				<ul>
 					<li>Beginner friendliness: 5/10</li>
 					<li>Includes starter guide: Yes</li>
@@ -520,7 +483,7 @@
 				<img src="endeavour.png">
 	
 				<h3><a href="https://cachyos.org/">CachyOS</a></h3>
-				CachyOS is very similar to EndeavourOS except it uses a customized kernel that contains optimizations for maximum performance, particularly in gaming.
+				<p>CachyOS is very similar to EndeavourOS except it uses a customized kernel that contains optimizations for maximum performance, particularly in gaming.</p>
 				<ul>
 					<li>Beginner friendliness: 5/10</li>
 					<li>Includes starter guide: Yes</li>
@@ -528,15 +491,11 @@
 					<li>Base distro: Arch</li>
 					<li>Default desktop environment: KDE Plasma</li>
 					<li>Release type: Rolling</li>
-					<li>Notes</li>
-					<ul>
-						<li>CachyOS also has a separate version available for handheld PCs such as the Steam Deck.</li>
-					</ul>
 				</ul>
 				<img src="cachy.png">
 	
 				<h3><a href="https://voidlinux.org/">Void</a></h3>
-				Void Linux is a general-purpose, terminal-centric, lightweight distro. It's similar to Manjaro in that it's a rolling release distro that holds package versions back for the sake of stability. Unlike Manjaro however, Void tends to actually be stable. It's mostly intended for people who want a clean, lightweight system that is 100% FOSS.
+				<p>Void Linux is a general-purpose, terminal-centric, lightweight distro. It's similar to Manjaro in that it's a rolling release distro that holds package versions back for the sake of stability. Unlike Manjaro however, Void tends to actually be stable. It's mostly intended for people who want a clean, lightweight system that is 100% FOSS.</p>
 				<ul>
 					<li>Beginner friendliness: 4/10</li>
 					<li>Includes starter guide: Yes (Online only)</li>
@@ -548,7 +507,7 @@
 				<img src="void.png">
 	
 				<h3><a href="https://www.centos.org/download/">CentOS</a></h3>
-				CentOS is a more advanced OS catered towards users of Red Hat Enterprise Linux, similar to Fedora but more in-depth and less casual.
+				<p>CentOS is a more advanced OS catered towards users of Red Hat Enterprise Linux, similar to Fedora but more in-depth and less casual. Despite it being a rolling release distro, it won't always have the most recent software versions due to it receiving updates downstream from RHEL and Fedora. The plus side of this is that the distro will generally be more stable than the other two.</p>
 				<ul>
 					<li>Beginner friendliness: 4/10</li>
 					<li>Includes starter guide: No</li>
@@ -556,17 +515,11 @@
 					<li>Base distro: Red Hat Enterprise Linux (RHEL)</li>
 					<li>Default desktop environments: Cinnamon, GNOME, KDE Plasma, MATE, Xfce</li>
 					<li>Release type: Rolling</li>
-					<li>Notes</li>
-					<ul>
-						<li>Despite being a rolling release distro, CentOS won't always have the most recent software versions due to it receiving updates downstream from RHEL and Fedora. The plus side of this is that the distro will generally be more stable than the other two.</li>
-						<li>The main ISO doesn't support live booting and is only for installing. If you want to live boot CentOS, you will need to <a href="https://www.centos.org/altimages/">download a separate ISO.</a></li>
-						<li>The desktop environment in the screenshot is Cinnamon.</li>
-					</ul>
 				</ul>
 				<img src="centos.png">
 	
 				<h3><a href="http://www.slackware.com/">Slackware</a></h3>
-				Slackware is a very old distro (in fact, one of the first), that is still being maintained to this day. It's extremely lightweight and will run on just about anything that has at least 64 MB of RAM, making it ideal for 15+ year old machines that struggle to run modern distros. Setting up and maintaining this distro might not be easy for beginners.
+				<p>Slackware is a very old distro (in fact, one of the first), that is still being maintained to this day. It's extremely lightweight and will run on just about anything that has at least 64 MB of RAM, making it ideal for 15+ year old machines that struggle to run modern distros. Setting up and maintaining this distro might not be easy for beginners.</p>
 				<ul>
 					<li>Beginner friendliness: 4/10</li>
 					<li>Includes starter guide: No</li>
@@ -574,16 +527,11 @@
 					<li>Base distro: None</li>
 					<li>Default desktop environments: GNOME, KDE Plasma, Cinnamon, Xfce, MATE</li>
 					<li>Release type: Irregular</li>
-					<li>Notes</li>
-					<ul>
-						<li>The main ISO doesn't support live booting and is only for installing. If you want to live boot Slackware, you will need to <a href="https://download.liveslak.org/">download a separate ISO.</a></li>
-						<li>The desktop environment in the screenshot is Xfce.</li>
-					</ul>
 				</ul>
 				<img src="slackware.png">
 	
 				<h3><a href="https://www.kali.org/">Kali</a></h3>
-				Kali Linux is a highly specialized distro focused around cybersecurity. It comes with a huge amount of tools used for password cracking, forensic analysis, packet sniffing, network attacks, and much more. It's not a distro meant for daily driving by any means, I'm only including it here since it's popular and you might have heard of it before.
+				<p>Kali Linux is a highly specialized distro focused around cybersecurity. It comes with a huge amount of tools used for password cracking, forensic analysis, packet sniffing, network attacks, and much more. It's not a distro meant for daily driving by any means, I'm only including it here since it's popular and you might have heard of it before.</p>
 				<ul>
 					<li>Beginner friendliness: 3/10</li>
 					<li>Includes starter guide: Yes</li>
@@ -595,7 +543,7 @@
 				<img src="kali.png">
 	
 				<h3><a href="https://nixos.org/">NixOS</a></h3>
-				NixOS is a terminal-centric distro that has several features designed for software developers. These features include but are not limited to: Saving exact system configurations to use on different PCs so development environments remain consistent, having multiple versions of the same software installed at the same time, testing potentially dangerous system changes in a virtual machine, and rolling back the system to a previous version if something does break.
+				<p>NixOS is a terminal-centric distro that has several features designed for software developers. These features include but are not limited to: Saving exact system configurations to use on different PCs so development environments remain consistent, having multiple versions of the same software installed at the same time, testing potentially dangerous system changes in a virtual machine, and rolling back the system to a previous version if something does break.</p>
 				<ul>
 					<li>Beginner friendliness: 3/10</li>
 					<li>Includes starter guide: Yes</li>
@@ -607,7 +555,7 @@
 				<img src="nixos.png">
 
 				<h3><a href="https://archlinux.org/">Arch</a></h3>
-				Arch Linux is an extremely barebones and lightweight distro. By default, you get a terminal and a couple utility packages pre-installed, that's it. If you're new to Linux, you should probably stay far away from this distro until you're ready to go down that rabbit hole.
+				<p>Arch Linux is an extremely barebones and lightweight distro. By default, you get a terminal, a package manager, and a couple utility packages pre-installed, that's it. Arch and all Arch-based distros also have access to a special repo called the Arch User Repository (AUR). It features unofficial community-submitted packages, many of which give you the choice to either compile it yourself or download a pre-compiled binary. If you need a very specific piece of software that you can't find in the normal Arch repo, the AUR probably has at least one version of it. The downside to the AUR is that submissions aren't verified before being published, so it's possible for someone to do something malicious with it before they're caught. If you're new to Linux, you should probably stay away from this distro until you're ready to go down the Arch rabbit hole.</p>
 				<ul>
 					<li>Beginner friendliness: 2/10</li>
 					<li>Includes starter guide: Yes</li>
@@ -615,16 +563,11 @@
 					<li>Base distro: None</li>
 					<li>Default desktop environment: None</li>
 					<li>Release type: Rolling</li>
-					<li>Notes</li>
-					<ul>
-						<li>Arch and all Arch-based distros have access to a special repo called the Arch User Repository (AUR). It features unofficial community-submitted packages, many of which give you the choice to either compile it yourself or download a pre-compiled binary. If you need a very specific piece of software that you can't find in the normal Arch repo, the AUR probably has at least one version of it. The downside to the AUR is that submissions aren't verified before being published, so it's possible for someone to do something malicious with it before they're caught.</li>
-						<li>The desktop environment in the screenshot is Budgie.</li>
-					</ul>
 				</ul>
 				<img src="arch.png">
 	
 				<h3><a href="https://www.gentoo.org/downloads/">Gentoo</a></h3>
-				Gentoo is a very unusual distro. It ships with it's own unique software manager that compiles all programs from source rather than downloading precompiled binaries. This is supposedly for security and optimization purposes but I have my doubts that it's worth the compile times. Much like Arch, Gentoo is also extremely barebones and does not come with a desktop environment by default. If you're reading through this guide, you have absolutely no reason to use this distro.
+				<p>Gentoo is a very unusual distro. It ships with it's own unique software manager that compiles all programs from source rather than downloading precompiled binaries. This is supposedly for security and optimization purposes but I have my doubts that it's worth the compile times. Much like Arch, Gentoo is also extremely barebones and does not come with a desktop environment by default. If you're reading through this guide, you have absolutely no reason to use this distro. I think the best thing Gentoo has going for it is that it's available for just about every CPU architecture you can imagine, so I guess if you need to run Linux on a very specialized device, Gentoo will likely be able to do it.</p>
 				<ul>
 					<li>Beginner friendliness: 1/10</li>
 					<li>Includes starter guide: Yes (Online only)</li>
@@ -632,17 +575,24 @@
 					<li>Base distro: None</li>
 					<li>Default desktop environment: None</li>
 					<li>Release type: Rolling</li>
-					<li>Notes</li>
-					<ul>
-						<li>This distro might support the most CPU architectures out of all of them. There's a ton and half of them I've never even heard of. I guess if you need to run Linux on a very specialized device with an unusual architecture, Gentoo will be your best bet.</li>
-					</ul>
+				</ul>
+
+				<h3><a href="https://www.linuxfromscratch.org/">Linux From Scratch</a></h3>
+				<p>Linux From Scratch is not a distro, but a book. It explains how to build your own custom Linux system from the ground up. It's designed for enthusiasts who want to build a system that is tailored exactly to their needs and wants.</p>
+				<ul>
+					<li>Beginner friendliness: 0/10</li>
+					<li>Includes starter guide: Yes</li>
+					<li>Includes GUI software manager: If you want</li>
+					<li>Base distro: None</li>
+					<li>Default desktop environment: None</li>
+					<li>Release type: Up to you</li>
 				</ul>
 	
 				<h3><a href="https://store.steampowered.com/steamos">SteamOS</a></h3>
-				SteamOS is a specialized Arch Linux-based OS developed by Valve, for use with handheld gaming PCs such as the Steam Deck and Lenovo Legion Go. Despite having a desktop mode with the KDE Plasma desktop environment, it is not intended to be used as a normal desktop OS. It does not support normal PCs out of the box, and requires a lot of tweaking to get installed and running. If you want a distro similar to SteamOS that you can use on your desktop PC, check out Bazzite.
+				<p>SteamOS is a specialized Arch Linux-based OS developed by Valve, for use with handheld gaming PCs such as the Steam Deck and Lenovo Legion Go. Despite having a desktop mode with the KDE Plasma desktop environment, it is not intended to be used as a normal desktop OS. It does not support normal PCs out of the box, and requires a lot of tweaking to get installed and running. If you want a distro similar to SteamOS that you can use on your desktop PC, check out Bazzite.</p>
 
 				<h3><a href="https://www.freebsd.org/">FreeBSD</a></h3>
-				FreeBSD is NOT Linux, but I'm putting it here to avoid confusion because some people think it is. It's actually based on Unix, which is a much older OS made by Bell Labs that started development in 1969. Linux is Unix-like but not directly based on it, so naturally there's some similarities but there are many more differences.<br><br>These days, Unix itself isn't in development anymore, but several Unix-based operating systems are. FreeBSD, macOS, and Solaris are just a few examples. If you're reading through this guide, FreeBSD or any other Unix-based OS probably isn't for you.
+				<p>FreeBSD is NOT Linux, but I'm putting it here to avoid confusion because some people think it is. It's actually based on Unix, which is a much older OS made by Bell Labs that started development in 1969. Linux is Unix-like but not directly based on it, so naturally there's some similarities but there are many more differences.<br><br>These days, Unix itself isn't in development anymore, but several Unix-based operating systems are. FreeBSD, macOS, and Solaris are just a few examples. If you're reading through this guide, FreeBSD or any other Unix-based OS probably isn't for you.</p>
 			</div>
 
 			<h1 id="installinglinux">Installing Linux</h1>
