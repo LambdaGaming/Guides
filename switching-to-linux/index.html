@@ -9,7 +9,7 @@
 	<body>
 		<div class="main">
 			<h1>Switching to Linux</h1>
-			<h3 style="text-align:center">By <a href="https://github.com/LambdaGaming">OPGman<br></a>Published on June 12, 2024<br>Last updated on October 20, 2025</h3>
+			<h3 style="text-align:center">By <a href="https://github.com/LambdaGaming">OPGman<br></a>Published on June 12, 2024<br>Last updated on November 8, 2025</h3>
 			<h2>Table of Contents</h2>
 			<div class="toc">
 				<ol>
@@ -41,8 +41,8 @@
 			<p>As a long time Windows user, the idea of switching to Linux used to be nothing but a joke to me. Over the past couple years however, I've gotten fed up with many of the things Microsoft is doing with Windows, and I started looking into using Linux as a daily driver. It didn't take long for me to realize that it was a suitable alternative, and eventually all of my PCs were switched over to it. This guide will cover why I think Linux is generally a better alternative to Windows, how to get started using it, and many of the differences between Linux and Windows that you should know.<p>
 			<p>Before we start, please take note of a few things:</p>
 			<ul>
-				<li>Linux is <b>NOT</b> perfect. Going into it thinking it's going to work flawlessly and do everything better than Windows is the <b>wrong</b> mindset to have, because in most cases it simply isn't true. It's entirely <i>possible</i> for you to have a flawless experience, but it's not something you should ever expect from any operating system. The most important thing is that you need to be willing to learn and do your own research. This guide will cover a lot of ground, but it's impossible to cover everything.</li>
-				<li>This guide is mainly designed for Windows users. While macOS is mentioned occasionally throughout the guide, it's not popular enough for me to justify covering it as extensively as I did with Windows.</li>
+				<li>Linux is <b>NOT</b> perfect. Going into it thinking it's going to work flawlessly and do everything better than Windows is the <b>wrong</b> mindset to have. It's entirely <i>possible</i> for you to have a flawless experience, but it's not something you should ever expect from any operating system. The most important thing is that you need to be willing to learn and do your own research. This guide will cover a lot of ground, but it's impossible to cover everything.</li>
+				<li>This guide is mainly designed for Windows users. While macOS is mentioned occasionally throughout the guide, it's not popular enough in the home user space to justify covering it as extensively as Windows.</li>
 				<li>This guide contains a mix of my own experiences and factual information with citations. While I aim to make the information in this guide 100% accurate and easily verifiable, some information could be wrong or might lack proper citations. If you find any problems or have suggestions to add or change something, feel free to create an issue on <a href="https://github.com/LambdaGaming/Guides">GitHub.</a></li>
 			</ul></p>
 			<h1 id="why">Why Linux?</h1>
@@ -74,7 +74,7 @@
 			<p>Windows tends to bundle security updates with content updates and bug fixes. If a content update ends up breaking something, you can roll it back, but doing so would also roll back any security patches that were included with that update. On Linux, each program and library is installed and updated separately. You can choose exactly what you want to update, and updates aren't forced unless you want them to be.</p>
 			<h3>Long Term Support</h3>
 			<p>Windows versions are typically supported for around 10 years. Once support ends, that version will no longer receive security updates, which can potentially leave it <a href="https://www.cvedetails.com/vulnerability-list/vendor_id-26/product_id-739/Microsoft-Windows-Xp.html">permanently vulnerable.</a> There are <a href="https://massgrave.dev/windows10_eol">certain ways</a> to get extended security updates, but even with these you will eventually need to upgrade to a different OS.</p>
-			<p>Every Linux distro handles long term support differently, but generally speaking you will never have to worry about missing out on security patches or any other updates as long as you keep up with distro upgrades. These upgrades are less like moving from Windows 10 to 11 and are more like moving from Windows 11 24H2 to Windows 11 25H2. With rolling release distros, upgrades aren't even a thing because every package is constantly on the latest version. Linux is also now the only "main" option for running modern operating systems on 32-bit hardware, as Microsoft has dropped support for it with Windows 10's end of life, and Apple dropped support for it years ago.</p>
+			<p>Every Linux distro handles long term support differently, but generally speaking you will never have to worry about missing out on security patches or any other updates as long as you keep up with distro upgrades. These upgrades are less like moving from Windows 10 to 11 and are more like moving from Windows 11 24H2 to Windows 11 25H2. With rolling release distros, upgrades aren't even a thing because every package is constantly on the latest version. Linux is also now the only "main" option for running modern operating systems on 32-bit hardware, as Microsoft dropped support for it with Windows 10's end of life, and Apple dropped support for it years ago.</p>
 			<h2 id="freedom">Freedom</h2>
 			<hr>
 			<p>Unlike Windows and macOS, Linux gives you absolute control over the entire system, provided that you have access to the sudo password mentioned earlier. You have the freedom to install, modify, and remove absolutely anything, including parts that really shouldn't be touched because doing so could break the entire system. With Windows and macOS, you're stuck with whatever functionality Microsoft and Apple want you to have. There are many parts of both operating systems that cannot be removed, disabled, or modified no matter how hard you try.</p>
@@ -85,7 +85,7 @@
 			<hr>
 			<p>Distro is short for distribution. It's typically considered to be an operating system that runs on the Linux kernel, comes with various free open-source software (FOSS) pre-installed, is designed for desktop use, and is available to be used and distributed freely by the public. The problem is that there are many definitions, and some operating systems might fit this definition but are still not considered distros, and vice versa.</p>
 			<p>You might hear someone refer to a distro as GNU/Linux. This is in reference to the <a href="https://www.gnu.org/">GNU operating system.</a> A lot of distros adhere to the basic philosophy of GNU, which is essentially to build an operating system using only FOSS, but most mainstream distros aren't considered free by GNU's strict definition, so they technically aren't GNU/Linux.</p>
-			<p>The semantics of it is confusing and pretty much pointless to try to understand. The key takeaway is that most desktop operating systems that run on Linux are considered distros <i>and</i> are also referred to as GNU/Linux.</p>
+			<p>The semantics of it is confusing and there's no point in trying to understand it. The key takeaway is that most desktop operating systems that run on Linux are considered distros <i>and</i> are also referred to as GNU/Linux.</p>
 			
 			<h2 id="terminals">Terminals</h2>
 			<hr>
@@ -133,7 +133,7 @@
 
 			<h2 id="software">Software Management</h2>
 			<hr>
-			<p>One of the most noticeable differences between Windows and Linux is how software is installed. Each Linux distro comes with a program called a package manager. These are terminal-based (and sometimes also GUI-based) tools that are used to install, modify, update, and remove software. These software packages can be regular apps, system files, drivers, libraries, plugins, and more. When you want to install something, you will either type a command into the terminal or search for the program in your distro's GUI software manager and click install, similar to how the Microsoft Store works. Certain package managers will also let you install programs from a previously downloaded file, like how .exe and .msi files work on Windows. For example, Debian and Ubuntu-based distros will typically let you install programs from .deb files, and Fedora-based distros will accept .rpm files.</p>
+			<p>One of the most noticeable differences between Windows and Linux is how software is installed. Each Linux distro comes with a program called a package manager. These are terminal-based (and sometimes also GUI-based) tools that are used to install, modify, update, and remove software. These software packages can be regular apps, system files, drivers, libraries, plugins, and more. When you want to install something, you will either type a command into the terminal or search for the program in your distro's GUI software manager and click install, similar to how the Microsoft Store works. Certain package managers will also let you install programs from a previously downloaded file, like how .exe and .msi files work on Windows. For example, Debian and Ubuntu-based distros will typically let you install programs from .deb files, and Fedora-based distros use .rpm files.</p>
 			<p>Many package managers are also capable of automatically checking for updates, and notifying you if any are available. Unlike Windows, they will never automatically download or install updates without your knowledge or permission. They will also allow you to update specific packages while holding the rest back, if needed. Another common misconception is that Linux never requires a restart after updating system files. While most distros will never force you to restart, it's still recommended that you do so as soon as possible.</p>
 			<p>Where do these packages come from though? Who maintains them? When a program is downloaded through a package manager, it comes from a file server called a repository, or repo for short. These repos are typically hosted and maintained by the distro maintainer. Many distros offer multiple repos that hold different types of software, such as new releases that are being tested for stability. To ensure that everyone has a fast and stable connection to the repo, they are typically hosted by a bunch of servers around the world, called mirrors. Different organizations not directly affiliated with the distro maintainer might also host mirrors. Most beginner-friendly distros will automatically choose the mirror with the lowest ping to ensure that you have a fast and stable connection.</p>
 			<h3>Special Software Packages</h3>
@@ -156,7 +156,7 @@
 			<h4><a href="https://github.com/ValveSoftware/Proton">Proton</a></h4>
 			<p>Proton is a heavily modified version of Wine created by Valve. It's mainly designed to be used with Steam games, but with the right tools it can be used on programs outside of Steam. It's generally not recommended to use Proton for regular programs unless it has problems running with Wine.</p>
 			<h4><a href="https://github.com/GloriousEggroll/proton-ge-custom">Proton GE</a></h4>
-			<p>Proton GE is a fork of Proton created by GloriousEggroll (hence the GE). It contains patches for specific games that aren't included in regular Proton. If you have a game that doesn't work with any version of Proton, Proton GE might be the solution.</p>
+			<p>Proton GE is a fork of Proton created by GloriousEggroll. It contains patches for specific games that aren't included in regular Proton. If you have a game that doesn't work with any version of Proton, Proton GE might be the solution.</p>
 			<h4><a href="https://github.com/sonic2kk/steamtinkerlaunch">SteamTinkerLaunch</a></h4>
 			<p>SteamTinkerLaunch is a GUI wrapper for Proton that allows you to configure a wide range of settings which would otherwise need to be done through the terminal or a shell script. It's mainly used for modding and benchmarking.</p>
 			<h4><a href="https://usebottles.com/">Bottles</a></h4>
@@ -210,7 +210,7 @@
 						<td>EA App</td>
 						<td>Yes (Lutris, Bottles, Wine)</td>
 						<td>N/A</td>
-						<td>Doesn't need manual installation if game is launched from Steam.</td>
+						<td>Doesn't need manual installation for Steam games.</td>
 					</tr>
 					<tr>
 						<td>Epic Games Launcher</td>
@@ -270,11 +270,11 @@
 						<td>Ubisoft Connect</td>
 						<td>Yes, with Lutris, Bottles, or Wine</td>
 						<td>N/A</td>
-						<td>Doesn't need manual installation if game is launched from Steam.</td>
+						<td>Doesn't need manual installation for Steam games.</td>
 					</tr>
 					<tr>
 						<td>Valve Hammer Editor</td>
-						<td>Yes, (Wine, Proton GE)</td>
+						<td>Yes (Wine, Proton GE)</td>
 						<td>N/A</td>
 						<td>Requires Wine/Proton GE 9.0+</td>
 					</tr>
@@ -288,7 +288,7 @@
 						<td>Vortex Mod Manager</td>
 						<td>Yes (Wine)</td>
 						<td>N/A</td>
-						<td>Using this through Wine is how the developers intended for Linux users.</td>
+						<td>Using Wine is the official method for Linux users.</td>
 					</tr>
 					<tr>
 						<td>WinDirStat & WizTree</td>
